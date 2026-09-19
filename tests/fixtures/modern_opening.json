@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "parlimentNO": 14,
+    "sessionNO": 2,
+    "sittingDate": "07-01-2025"
+  },
+  "takesSectionVOList": [
+    {
+      "sectionType": "BI",
+      "title": "Workplace Fairness Bill",
+      "content": "<p>\"to protect against certain discriminatory behaviour relating to employment\", presented by the Minister for Manpower; read the First time</p>"
+    },
+    {
+      "sectionType": "BP",
+      "title": "Workplace Fairness Bill",
+      "content": "<p>Order for Second Reading read.</p><p><strong>The Minister for Manpower (Dr Tan See Leng)</strong>: Sir, I move, \"That the Bill be now read a Second time.\" This Bill establishes workplace fairness duties.</p>"
+    },
+    {
+      "sectionType": "BP",
+      "title": "Workplace Fairness Bill",
+      "content": "<p>Debate resumed.</p><p><strong>Mr Speaker</strong>: Dr Tan, you may proceed.</p>"
+    }
+  ]
+}

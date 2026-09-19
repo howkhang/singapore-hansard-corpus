@@ -3,6 +3,12 @@ __pycache__/
 *.pyc
 .DS_Store
 data/hansard/json/
+data/hansard/json/*.meta.json
 data/hansard/crawl.log
 data/hansard/crawl.exit
 data/hansard/failed_dates.txt
+data/hansard/shards.staging/
+data/hansard/shards.bak/
+data/hansard/normalized/v1/reports/
+data/hansard/normalized/v1.staging/
+data/hansard/normalized/v1.bak/

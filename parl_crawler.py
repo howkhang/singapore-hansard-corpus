@@ -2,9 +2,16 @@ import json
 import os
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 
 import requests
+
+from hansard_report import (
+    atomic_write_bytes,
+    load_validated_report,
+    sha256_bytes,
+    validate_hansard_payload,
+)
 
 URL = "https://sprs.parl.gov.sg/search/getHansardReport/"
 DATES_FILE = "./sitting_dates.txt"
@@ -84,6 +91,44 @@ def append_failed(sitting_date, reason):
         f.write(f"{sitting_date.isoformat()}\t{reason}\n")
 
 
+def write_capture_meta(file_name, sitting_date, raw, fmt, http_status):
+    meta_path = file_name[: -len(".json")] + ".meta.json"
+    payload = {
+        "sitting_date": sitting_date.isoformat(),
+        "captured_at": datetime.now(timezone.utc)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z"),
+        "http_status": http_status,
+        "format": fmt,
+        "raw_sha256": sha256_bytes(raw),
+        "bytes": len(raw),
+    }
+    atomic_write_bytes(
+        meta_path, json.dumps(payload, indent=2).encode("utf-8") + b"\n"
+    )
+
+
+def cached_report_is_valid(file_name, sitting_date):
+    try:
+        load_validated_report(file_name, sitting_date)
+    except (OSError, ValueError):
+        return False
+    return True
+
+
+def store_response(file_name, sitting_date, response):
+    raw = response.content
+    try:
+        payload = json.loads(raw)
+    except ValueError as exc:
+        raise ValueError(f"invalid JSON: {exc}") from exc
+    fmt = validate_hansard_payload(payload, sitting_date)
+    atomic_write_bytes(file_name, raw)
+    write_capture_meta(file_name, sitting_date, raw, fmt, response.status_code)
+    return fmt
+
+
 def main(dates_file=DATES_FILE):
     sitting_dates = load_sitting_dates(dates_file)
     os.makedirs(DATA_DIR, exist_ok=True)
@@ -98,8 +143,10 @@ def main(dates_file=DATES_FILE):
     for index, sitting_date in enumerate(sitting_dates, 1):
         prefix = f"[{index}/{total}] {sitting_date.isoformat()}"
         file_name = os.path.join(DATA_DIR, f"{sitting_date.isoformat()}.json")
-        if os.path.exists(file_name):
-            print(f"{prefix}: skipping existing file")
+        if os.path.exists(file_name) and cached_report_is_valid(
+            file_name, sitting_date
+        ):
+            print(f"{prefix}: skipping valid cached file")
             skipped += 1
             continue
 
@@ -112,23 +159,23 @@ def main(dates_file=DATES_FILE):
             time.sleep(REQUEST_DELAY)
             continue
 
-        if response.status_code == 200:
-            try:
-                payload = response.json()
-            except ValueError as exc:
-                print(f"{prefix}: invalid JSON: {exc}")
-                append_failed(sitting_date, f"invalid JSON: {exc}")
-                failed += 1
-            else:
-                print(f"{prefix}: writing {file_name}")
-                with open(file_name, "w", encoding="utf-8") as f:
-                    json.dump(payload, f, ensure_ascii=False, indent=4)
-                written += 1
-        else:
+        if response.status_code != 200:
             reason = f"HTTP {response.status_code} ({response.reason})"
             print(f"{prefix}: {reason}")
             append_failed(sitting_date, reason)
             failed += 1
+            time.sleep(REQUEST_DELAY)
+            continue
+
+        try:
+            fmt = store_response(file_name, sitting_date, response)
+        except ValueError as exc:
+            print(f"{prefix}: invalid report: {exc}")
+            append_failed(sitting_date, f"invalid report: {exc}")
+            failed += 1
+        else:
+            print(f"{prefix}: writing {file_name} ({fmt})")
+            written += 1
 
         time.sleep(REQUEST_DELAY)
 
@@ -137,7 +184,6 @@ def main(dates_file=DATES_FILE):
     )
     if failed:
         print(f"Failed dates logged to {FAILED_LOG}")
-    if written == 0 and skipped == 0:
         raise SystemExit(1)
 
 

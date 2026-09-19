@@ -1,0 +1,31 @@
+{
+  "reports": 1751,
+  "legacy": 1333,
+  "modern": 418,
+  "sections_by_type": {
+    "attendance": 41941,
+    "permission_to_be_absent": 9860,
+    "written_answers": 8579,
+    "written_answers_not_orally_asked": 7807,
+    "oral_answers": 3525,
+    "second_reading_opening": 2451,
+    "vernacular": 2413,
+    "other_speech": 2248,
+    "first_reading": 1978,
+    "unresolved": 1731,
+    "sitting_front_matter": 1118,
+    "assent_to_bills": 492,
+    "annexure": 399,
+    "second_reading_resumed": 393,
+    "written_statement": 93,
+    "third_reading": 3,
+    "bill_proceeding_unclassified": 2,
+    "second_reading_completion": 1
+  },
+  "sections_by_status": {
+    "preserved": 1118,
+    "classified": 82183,
+    "unresolved": 1733
+  },
+  "note": "Unresolved classification keeps full text in the section. Attachment PDFs are listed without bytes."
+}

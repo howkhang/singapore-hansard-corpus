@@ -1,0 +1,174 @@
+{
+  "old_parser": "second-readings-index-v6",
+  "new_parser": "second-readings-index-v7",
+  "old_entries": 2545,
+  "new_entries": 2544,
+  "added": 32,
+  "removed": 33,
+  "relinked": 24,
+  "added_sample": [
+    [
+      "Alumni Register Bill",
+      "1996-03-11"
+    ],
+    [
+      "Appropriation Bill",
+      "1960-12-08"
+    ],
+    [
+      "Companies (Amendment) Bill",
+      "1989-03-22"
+    ],
+    [
+      "Computer Misuse Bill",
+      "1993-03-18"
+    ],
+    [
+      "Constitution of the Republic of Singapore (Amendment) Bill--> Constitution of the Republic of Singapore (Amendment) Bill",
+      "2004-03-17"
+    ],
+    [
+      "Corruption (Confiscation of Benefits) Bill",
+      "1988-03-15"
+    ],
+    [
+      "Criminal Law (Temporary Provisions) (Amendment) Bill",
+      "1999-03-11"
+    ],
+    [
+      "Dentists (Amendment) Bill--> Dentists (Amendment) Bill",
+      "2007-02-27"
+    ],
+    [
+      "Education (Amendment) Bill",
+      "1997-07-22"
+    ],
+    [
+      "Electricity (Amendment) Bill--> Electricity (Amendment) Bill",
+      "2006-02-27"
+    ],
+    [
+      "Environmental Public Health (Amendment) Bill",
+      "1999-03-08"
+    ],
+    [
+      "Gas (Amendment) Bill--> Gas (Amendment) Bill",
+      "2007-04-10"
+    ],
+    [
+      "Infectious Diseases (Amendment) Bill",
+      "1992-01-16"
+    ],
+    [
+      "Insurance (Amendment) Bill",
+      "1995-03-23"
+    ],
+    [
+      "Legal Profession (Amendment) Bill--> Legal Profession (Amendment) Bill",
+      "2007-03-09"
+    ],
+    [
+      "Merchant Shipping Bill",
+      "1995-03-13"
+    ],
+    [
+      "Moneylenders (Amendment) Bill",
+      "1993-03-09"
+    ],
+    [
+      "National Parks Bill",
+      "1990-03-13"
+    ],
+    [
+      "Parking Places Bill",
+      "1963-06-11"
+    ],
+    [
+      "Parliamentary Elections (Amendment) Bill",
+      "1999-03-18"
+    ]
+  ],
+  "removed_sample": [
+    [
+      "Bill Introduced Appropriation Bill",
+      "1960-12-08"
+    ],
+    [
+      "Bill Introduced Companies (Amendment) Bill",
+      "1989-03-22"
+    ],
+    [
+      "Bill Introduced Computer Misuse Bill",
+      "1993-03-18"
+    ],
+    [
+      "Bill Introduced Corruption (Confiscation of Benefits) Bill",
+      "1988-03-15"
+    ],
+    [
+      "Bill Introduced Criminal Law (Temporary Provisions) (Amendment) Bill",
+      "1999-03-11"
+    ],
+    [
+      "Bill Introduced Education (Amendment) Bill",
+      "1997-07-22"
+    ],
+    [
+      "Bill Introduced Environmental Public Health (Amendment) Bill",
+      "1999-03-08"
+    ],
+    [
+      "Bill Introduced Infectious Diseases (Amendment) Bill",
+      "1992-01-16"
+    ],
+    [
+      "Bill Introduced Insurance (Amendment) Bill",
+      "1995-03-23"
+    ],
+    [
+      "Bill Introduced Merchant Shipping Bill",
+      "1995-03-13"
+    ],
+    [
+      "Bill Introduced Moneylenders (Amendment) Bill",
+      "1993-03-09"
+    ],
+    [
+      "Bill Introduced National Parks Bill",
+      "1990-03-13"
+    ],
+    [
+      "Bill Introduced Parliamentary Elections (Amendment) Bill",
+      "1999-03-18"
+    ],
+    [
+      "Bill Introduced Parliamentary Elections (Amendment) Bill",
+      "2001-03-16"
+    ],
+    [
+      "Bill Introduced Parliamentary Pensions (Amendment) Bill",
+      "2002-04-04"
+    ],
+    [
+      "Bill Introduced Princess Elizabeth Fund (Repeal) Bill",
+      "1998-03-19"
+    ],
+    [
+      "Bill Introduced Revised Edition of the Laws (Amendment) Bill",
+      "1994-03-16"
+    ],
+    [
+      "Bill Introduced Singapore (Elections to the Federal House of Representatives) Bill",
+      "1963-06-14"
+    ],
+    [
+      "Bill Introduced Singapore University of Technology and Design Bill",
+      "2011-03-01"
+    ],
+    [
+      "Bill Introduced Societies (Amendment) Bill",
+      "1982-03-25"
+    ]
+  ],
+  "explanation": "v7 indexes Second Readings from hansard-normalized-v1 sections. Counts are not forced to match v6. Differences are mainly legacy span splits when First Reading cuts sit inside a former 2R block, plus title-normalization changes. Relinked rows changed continuation or First Reading confidence."
+}

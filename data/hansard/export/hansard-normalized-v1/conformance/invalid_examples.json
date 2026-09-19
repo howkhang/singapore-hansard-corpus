@@ -1,0 +1,8 @@
+{
+  "unsupported_schema": {
+    "schema_version": "hansard-normalized-v0",
+    "expected": "consumer must reject"
+  },
+  "missing_report": "retrieve sitting:1999-01-01:takes:0 must fail",
+  "hash_mismatch": "alter one byte of a normalized report; validate and retrieve must fail"
+}

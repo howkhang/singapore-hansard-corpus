@@ -1,366 +1,78 @@
 #!/usr/bin/env python3
-"""Build an index of Second Reading debates from the Hansard JSON corpus."""
+"""Build an index of Second Reading debates from normalized Hansard reports."""
 
 import json
 import os
 import re
 from collections import defaultdict
 from datetime import date, datetime
-from html import unescape
+
+from hansard_norm.report import normalize_payload, records_from_report
+from hansard_norm.spans import (
+    KIND_LABEL,
+    bill_title_from_prefix,
+    classify,
+    classify_html_marker,
+    classify_second_reading_event,
+    collapse_space,
+    display_title,
+    extract_long_title,
+    extract_moved_by,
+    extract_opening,
+    extract_presented_by,
+    find_html_offset,
+    html_marker_spans,
+    is_second_reading_text,
+    normalize_title,
+    parse_legislature,
+    passage_from_html,
+    relative_file,
+    sitting_date_from_name,
+    strip_html,
+    titles_are_variants,
+)
+from hansard_report import sha256_bytes, sha256_text, sitting_filenames
+
+PARSER_VERSION = "second-readings-index-v7"
+NORM_DIR = "./data/hansard/normalized/v1"
 
 DATA_DIR = "./data/hansard/json"
 JSON_OUT = "./data/hansard/second_readings_index.json"
 MD_OUT = "./data/hansard/second_readings_index.md"
 
-QUOTE_CHARS = {
-    "\u2018": "'",
-    "\u2019": "'",
-    "\u201c": '"',
-    "\u201d": '"',
-    "\xa0": " ",
-}
-
-
-def strip_html(html):
-    if not html:
-        return ""
-    text = re.sub(r"(?i)<br\s*/?>", "\n", html)
-    text = re.sub(r"(?i)</(p|div|h[1-6]|li|tr)>", "\n", text)
-    text = re.sub(r"(?i)<strong>", "", text)
-    text = re.sub(r"(?i)</strong>", "", text)
-    text = re.sub(r"<[^>]+>", " ", text)
-    text = unescape(text)
-    for src, dst in QUOTE_CHARS.items():
-        text = text.replace(src, dst)
-    text = re.sub(r"\[\(\s*proc text\s*\)\s*", "", text, flags=re.I)
-    text = re.sub(r"\s*\(\s*proc text\s*\)\]", "", text, flags=re.I)
-    text = re.sub(r"Page:\s*\d+", " ", text)
-    text = re.sub(r"Column(?: No)?\s*:?\s*\d+", " ", text)
-    text = re.sub(r"[ \t]+", " ", text)
-    text = re.sub(r" *\n *", "\n", text)
-    text = re.sub(r"\n{3,}", "\n\n", text)
-    return text.strip()
-
-
-def normalize_title(title):
-    text = strip_html(title or "")
-    text = text.upper()
-    text = text.replace("NO.", "NO")
-    text = re.sub(r"\s*\(NO\s*(\d+)\)", r" (NO \1)", text)
-    text = re.sub(r"[.\s]+$", "", text)
-    text = re.sub(r"\s+", " ", text).strip()
-    if text and "BILL" not in text:
-        text = f"{text} BILL"
-    return text
-
-
-def display_title(title):
-    text = collapse_space(strip_html(title or ""))
-    letters = re.sub(r"[^A-Za-z]", "", text)
-    if letters and letters.isupper() and len(letters) > 4:
-        text = text.title()
-        text = text.replace("'S", "'s")
-        for word in ("Of", "And", "The", "For", "To", "In", "On"):
-            text = re.sub(rf"\b{word}\b", word.lower(), text)
-        text = text[0].upper() + text[1:]
-        text = re.sub(r"\bNo\b", "No.", text)
-    text = re.sub(r"\s+bill$", " Bill", text, flags=re.I)
-    return text
-
-
-def classify(title, long_title=""):
-    title_u = (title or "").upper()
-    if re.search(r"\bSUPPLY\b", title_u) or "APPROPRIATION" in title_u:
-        return "supply"
-    if "MISCELLANEOUS AMENDMENT" in title_u:
-        return "miscellaneous_amendment"
-    if re.search(r"\(AMENDMENT", title_u) or " AMENDMENT BILL" in title_u:
-        return "amendment"
-    if re.search(r"\(ABOLITION", title_u) or re.search(r"\(REPEAL", title_u):
-        return "repeal"
-    return "new_act"
-
-
-KIND_LABEL = {
-    "new_act": "New Act",
-    "amendment": "Amendment",
-    "miscellaneous_amendment": "Miscellaneous amendment",
-    "repeal": "Repeal / abolition",
-    "supply": "Supply",
-}
-
-
-def collapse_space(text):
-    return re.sub(r"\s+", " ", text or "").strip()
-
-
-def extract_long_title(text):
-    text = collapse_space(text)
-    match = re.search(r'"((?:to |for )[^"]{8,1200})"', text, re.I)
-    if match:
-        return collapse_space(match.group(1)).rstrip(" .,")
-    match = re.search(
-        r"((?:to |for )(?:amend|provide|establish|govern|give effect|"
-        r"reconstitute|protect|make|repeal|implement|create|enable|"
-        r"introduce|set out)[^.]{8,800})",
-        text,
-        re.I,
-    )
-    if match:
-        return collapse_space(match.group(1)).rstrip(" .,")
-    return ""
-
-
-def extract_presented_by(text):
-    text = collapse_space(text)
-    match = re.search(
-        r"presented by\s+(.+?)(?:;|,?\s*read the First time)",
-        text,
-        re.I,
-    )
-    if not match:
-        return ""
-    return collapse_space(match.group(1)).strip(" ;,")
-
-
-def extract_moved_by(text):
-    match = re.search(
-        r"((?:The |Acting |Senior |Deputy |Second |Coordinating )"
-        r"[^\n:]{5,180}?)\s*:\s*"
-        r"(?:Mr Speaker|Madam|Sir|Mr Deputy Speaker)?"
-        r"[^.]{0,180}?"
-        r"(?:on behalf of [^,]+,\s*)?(?:I (?:beg to |now )?move)",
-        text,
-        re.I | re.S,
-    )
-    if not match:
-        return ""
-    mover = collapse_space(match.group(1))
-    mover = re.sub(r"^\d+\.\d+\s*(?:am|pm)\s*", "", mover, flags=re.I)
-    return mover.strip(" .")
-
-
-def extract_opening(text, limit=900):
-    match = re.search(
-        r'(?:That |The )?the Bill be now read a Second time\.?"?\s*(.*)',
-        text,
-        re.I | re.S,
-    )
-    body = match.group(1) if match else text
-    stop = re.search(
-        r"\n(?:Mr|Mrs|Ms|Miss|Dr|Prof\.?|Assoc\.? Prof\.?|The Honourable) "
-        r"[A-Z][^\n:]{2,80}:",
-        body,
-    )
-    if stop and stop.start() > 60:
-        body = body[: stop.start()]
-    body = collapse_space(body)
-    body = re.sub(
-        r"^(?:Order for Second Reading read\.?\s*)?"
-        r"(?:Mr Speaker|Madam|Sir|Mr Deputy Speaker)[^.]{0,80}\.\s*"
-        r"(?:\d+\.\d+\s*(?:am|pm)\s*)?",
-        "",
-        body,
-        flags=re.I,
-    )
-    body = re.sub(
-        r"^(?:The |Acting |Senior |Deputy |Second |Coordinating )[^:]{5,180}:\s*",
-        "",
-        body,
-        flags=re.I,
-    )
-    body = re.sub(
-        r"^(?:Mr Speaker|Madam|Sir|Mr Deputy Speaker)[,.]?\s*(?:Sir[,.]?\s*)?",
-        "",
-        body,
-        flags=re.I,
-    )
-    body = re.sub(r"^on behalf of [^,]+,\s*", "", body, flags=re.I)
-    body = re.sub(
-        r"^I (?:beg to |now )?move,?\s*\"[^\"]{0,80}\"\.?\s*",
-        "",
-        body,
-        flags=re.I,
-    )
-    body = collapse_space(body).lstrip(" .")
-    if len(body) <= limit:
-        return body
-    cut = body[:limit]
-    if " " in cut:
-        cut = cut.rsplit(" ", 1)[0]
-    return cut.rstrip(",;:") + "…"
-
-
-def sitting_date_from_name(filename):
-    return filename[: -len(".json")]
-
-
-def parse_parliament(data, html=""):
-    meta = data.get("metadata") or {}
-    for key in ("parlimentNO", "parliamentNO", "parliamentNo"):
-        value = meta.get(key)
-        if value not in (None, "", "null"):
-            try:
-                return int(value)
-            except (TypeError, ValueError):
-                pass
-    value = data.get("parlNo")
-    if value not in (None, "", "null"):
-        try:
-            return int(value)
-        except (TypeError, ValueError):
-            pass
-    if html:
-        match = re.search(
-            r"<Meta name=['\"]Parl_No['\"] content=['\"](\d+)['\"]",
-            html,
-            re.I,
-        )
-        if match:
-            return int(match.group(1))
-    return None
-
-
-def relative_file(filename):
-    return f"data/hansard/json/{filename}"
-
-
-def is_second_reading_text(text):
-    if re.search(r"Question again proposed", text, re.I) and (
-        len(text) < 500
-        or not re.search(r"I (?:beg to |now )?move", text, re.I)
-    ):
-        return False
-    return bool(
-        re.search(r"Order for Second Reading read", text, re.I)
-        or re.search(r"be now read a Second time", text, re.I)
-    )
-
 
 def parse_modern(filename, data):
-    first, second = [], []
-    sitting = sitting_date_from_name(filename)
-    parl = parse_parliament(data)
-    source = relative_file(filename)
-    for take in data.get("takesSectionVOList") or []:
-        section = (take.get("sectionType") or "").strip()
-        title = (take.get("title") or "").strip()
-        if not title:
-            continue
-        content = take.get("content") or ""
-        text = strip_html(content)
-        if section == "BI":
-            first.append(
-                {
-                    "title": display_title(title),
-                    "norm": normalize_title(title),
-                    "date": sitting,
-                    "file": source,
-                    "parliament": parl,
-                    "long_title": extract_long_title(text),
-                    "presented_by": extract_presented_by(text),
-                    "source": "json",
-                }
-            )
-        elif section == "BP" and is_second_reading_text(text):
-            second.append(
-                {
-                    "title": display_title(title),
-                    "norm": normalize_title(title),
-                    "date": sitting,
-                    "file": source,
-                    "parliament": parl,
-                    "moved_by": extract_moved_by(text),
-                    "opening": extract_opening(text),
-                    "source": "json",
-                }
-            )
-    return first, second
-
-
-FIRST_READING_RE = re.compile(
-    r"(?:^|\n)\s*([A-Z][A-Z0-9 ,.'()/\-&]{4,140} BILL)\s+"
-    r'"((?:to |for )[^"]{8,1200})"\s*[,.]?\s*'
-    r"(?:recommendation of President signified\s*;?\s*)?"
-    r"presented by\s+(.+?);\s*read the First time",
-    re.S,
-)
+    raw = json.dumps(data, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    report = normalize_payload(
+        filename,
+        data,
+        source_path=relative_file(filename),
+        source_sha256=sha256_bytes(raw),
+        source_format="modern",
+    )
+    return records_from_report(report)
 
 
 def parse_legacy_html(filename, data):
-    html = data.get("htmlFullContent") or ""
-    if not html:
-        return [], []
-    sitting = sitting_date_from_name(filename)
-    parl = parse_parliament(data, html)
-    source = relative_file(filename)
-    text = strip_html(html)
-
-    first = []
-    seen_first = set()
-    for match in FIRST_READING_RE.finditer(text):
-        raw_title = collapse_space(match.group(1))
-        norm = normalize_title(raw_title)
-        key = (norm, sitting)
-        if key in seen_first:
-            continue
-        seen_first.add(key)
-        first.append(
-            {
-                "title": display_title(raw_title),
-                "norm": norm,
-                "date": sitting,
-                "file": source,
-                "parliament": parl,
-                "long_title": collapse_space(match.group(2)).rstrip(" .,"),
-                "presented_by": collapse_space(match.group(3)).strip(" ;,"),
-                "source": "html",
-            }
-        )
-
-    second = []
-    parts = re.split(r"Order for Second Reading read\.?", text, flags=re.I)
-    for index, part in enumerate(parts[1:], 1):
-        before = parts[index - 1]
-        tail = collapse_space(before[-800:])
-        titles = list(
-            re.finditer(r"([A-Z][A-Z0-9 ,.'()/\-&]{4,140} BILL)\s*$", tail)
-        )
-        if not titles:
-            titles = list(
-                re.finditer(r"([A-Z][A-Z0-9 ,.'()/\-&]{4,140} BILL)", tail)
-            )
-        if not titles:
-            continue
-        raw_title = titles[-1].group(1)
-        # Ignore "BILLS" catch-alls and very short fragments.
-        if raw_title.strip() in {"BILL", "THE BILL"} or raw_title.startswith(")"):
-            continue
-        if re.match(r"^(AND |OF |THE )", raw_title):
-            continue
-        after = collapse_space(part[:2500])
-        if not re.search(r"Second time", after, re.I):
-            # Committee/third-reading remnants; skip.
-            if not re.search(r"I beg to move|I move", after, re.I):
-                continue
-        second.append(
-            {
-                "title": display_title(raw_title),
-                "norm": normalize_title(raw_title),
-                "date": sitting,
-                "file": source,
-                "parliament": parl,
-                "moved_by": extract_moved_by(after),
-                "opening": extract_opening(after),
-                "source": "html",
-            }
-        )
-    return first, second
+    raw = json.dumps(data, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    report = normalize_payload(
+        filename,
+        data,
+        source_path=relative_file(filename),
+        source_sha256=sha256_bytes(raw),
+        source_format="legacy",
+    )
+    return records_from_report(report)
 
 
 def group_key(record):
     parl = record.get("parliament")
-    return (record["norm"], parl if parl is not None else "unknown")
+    session = record.get("session")
+    return (
+        record["norm"],
+        parl if parl is not None else "unknown",
+        session if session is not None else "unspecified",
+    )
 
 
 def match_readings(first_readings, second_readings):
@@ -380,57 +92,144 @@ def match_readings(first_readings, second_readings):
     pending = []
 
     def second_id(item):
-        return (item["norm"], item["date"], item["file"])
+        loc = item.get("locator") or {}
+        return (
+            item["norm"],
+            item["date"],
+            item["file"],
+            loc.get("section_index"),
+            loc.get("html_offset"),
+        )
 
+    leftover_firsts = []
     for key, firsts in first_groups.items():
         seconds = second_groups.get(key, [])
         cursor = 0
-        for first in firsts:
+        for index, first in enumerate(firsts):
+            window_end = (
+                firsts[index + 1]["date"] if index + 1 < len(firsts) else "9999-12-31"
+            )
             while cursor < len(seconds) and seconds[cursor]["date"] < first["date"]:
                 cursor += 1
-            if cursor < len(seconds):
+            if (
+                cursor < len(seconds)
+                and seconds[cursor]["date"] < window_end
+            ):
                 second = seconds[cursor]
                 matched_second_ids.add(second_id(second))
                 entries.append(make_entry(first, second))
                 cursor += 1
             else:
-                if not re.match(r"^(AMENDMENT|NO \d+)\)", first["norm"]):
-                    pending.append(make_pending(first))
+                leftover_firsts.append(first)
 
+    unmatched_seconds = []
     for key, seconds in second_groups.items():
         for second in seconds:
             if second_id(second) in matched_second_ids:
                 continue
-            # Unmatched second reading: attach a later-or-same first reading
-            # from the same title if parliament was unknown on one side.
+            unmatched_seconds.append(second)
+
+    used_variant_firsts = set()
+    for second in unmatched_seconds:
+        variant = _nearest_title_variant(second, leftover_firsts, used_variant_firsts)
+        if variant:
+            used_variant_firsts.add(id(variant))
+            entry = make_entry(variant, second)
+            entry["link_confidence"] = "title_variant_unconfirmed"
+            entries.append(entry)
+        else:
             entries.append(make_entry(None, second))
+
+    for first in leftover_firsts:
+        if id(first) in used_variant_firsts:
+            continue
+        if not re.match(r"^(AMENDMENT|NO \d+)\)", first["norm"]):
+            pending.append(make_pending(first))
 
     entries.sort(key=lambda item: (item["second_reading"]["date"], item["title"]))
     pending.sort(key=lambda item: (item["first_reading"]["date"], item["title"]))
     return merge_continuations(entries), pending
 
 
+def _nearest_title_variant(second, leftover_firsts, used_ids):
+    best = None
+    for first in leftover_firsts:
+        if id(first) in used_ids:
+            continue
+        if first.get("parliament") != second.get("parliament"):
+            continue
+        if first.get("session") != second.get("session"):
+            continue
+        if not titles_are_variants(first["title"], second["title"]):
+            continue
+        if first["date"] > second["date"]:
+            continue
+        gap = (
+            datetime.strptime(second["date"], "%Y-%m-%d").date()
+            - datetime.strptime(first["date"], "%Y-%m-%d").date()
+        ).days
+        if gap > 180:
+            continue
+        if best is None or first["date"] > best["date"]:
+            best = first
+    return best
+
+
+def _locator_payload(record):
+    locator = dict(record.get("locator") or {})
+    locator.setdefault("file", record.get("file"))
+    return locator
+
+
 def merge_continuations(entries):
     groups = defaultdict(list)
     for entry in entries:
-        key = (normalize_title(entry["title"]), entry.get("parliament"))
+        sr = entry["second_reading"]
+        key = (
+            normalize_title(entry["title"]),
+            entry.get("parliament"),
+            entry.get("session"),
+        )
         groups[key].append(entry)
 
     merged = []
     for items in groups.values():
-        items.sort(key=lambda item: item["second_reading"]["date"])
+        items.sort(
+            key=lambda item: (
+                item["second_reading"]["date"],
+                item["second_reading"].get("section_index") or 0,
+            )
+        )
         current = None
         for entry in items:
             if current is None:
                 current = entry
                 continue
+            event = entry["second_reading"].get("event")
             first = entry.get("first_reading") or {}
             prev_date = current["second_reading"]["date"]
-            if not first or first.get("date", "") <= prev_date:
+            later = entry["second_reading"]["date"]
+            try:
+                gap_days = (
+                    datetime.strptime(later, "%Y-%m-%d").date()
+                    - datetime.strptime(prev_date, "%Y-%m-%d").date()
+                ).days
+            except ValueError:
+                gap_days = None
+            explicit_resumption = (
+                event == "resumed"
+                and (not first or first.get("date", "") <= prev_date)
+                and gap_days is not None
+                and 0 <= gap_days <= 120
+            )
+            if explicit_resumption:
                 current.setdefault("continued_on", []).append(
                     {
                         "date": entry["second_reading"]["date"],
                         "file": entry["second_reading"]["file"],
+                        "event": event,
+                        "link_confidence": "explicit_resumption",
+                        "locator": entry["second_reading"].get("locator"),
                     }
                 )
             else:
@@ -439,15 +238,7 @@ def merge_continuations(entries):
         if current:
             merged.append(current)
     merged.sort(key=lambda item: (item["second_reading"]["date"], item["title"]))
-    return [
-        item
-        for item in merged
-        if not re.search(
-            r"Question again proposed",
-            item["second_reading"].get("opening") or "",
-            re.I,
-        )
-    ]
+    return merged
 
 
 def make_entry(first, second):
@@ -455,26 +246,37 @@ def make_entry(first, second):
     long_title = (first or {}).get("long_title") or ""
     kind = classify(title, long_title)
     parliament = (second or first).get("parliament")
+    session = (second or first).get("session")
     if first and first.get("parliament") is not None:
         parliament = first["parliament"]
+    if first and first.get("session") is not None:
+        session = first["session"]
     entry = {
         "title": title,
         "kind": kind,
         "long_title": long_title,
         "parliament": parliament,
+        "session": session,
+        "parser_version": PARSER_VERSION,
         "first_reading": None,
         "second_reading": {
             "date": second["date"],
             "file": second["file"],
+            "event": second.get("event") or "opening",
+            "section_index": (second.get("locator") or {}).get("section_index"),
             "moved_by": second.get("moved_by") or "",
             "opening": second.get("opening") or "",
+            "locator": _locator_payload(second),
         },
+        "link_confidence": "first_and_second_matched" if first else "second_reading_only",
+        "captured_at": None,
     }
     if first:
         entry["first_reading"] = {
             "date": first["date"],
             "file": first["file"],
             "presented_by": first.get("presented_by") or "",
+            "locator": _locator_payload(first),
         }
         if not entry["long_title"]:
             entry["long_title"] = first.get("long_title") or ""
@@ -487,29 +289,46 @@ def make_pending(first):
         "kind": classify(first["title"], first.get("long_title") or ""),
         "long_title": first.get("long_title") or "",
         "parliament": first.get("parliament"),
+        "session": first.get("session"),
+        "parser_version": PARSER_VERSION,
         "first_reading": {
             "date": first["date"],
             "file": first["file"],
             "presented_by": first.get("presented_by") or "",
+            "locator": _locator_payload(first),
         },
         "second_reading": None,
+        "link_confidence": "first_reading_only",
+        "captured_at": None,
     }
 
 
 def scan_corpus():
     first_readings = []
     second_readings = []
-    names = sorted(
-        name for name in os.listdir(DATA_DIR) if name.endswith(".json")
-    )
+    names = sitting_filenames(DATA_DIR)
+    reports_dir = os.path.join(NORM_DIR, "reports")
+    use_norm = os.path.isdir(reports_dir)
+    if use_norm:
+        print(f"indexing from {reports_dir}")
+    else:
+        print(f"normalized reports missing; indexing from raw JSON in {DATA_DIR}")
     for index, name in enumerate(names, 1):
-        path = os.path.join(DATA_DIR, name)
-        with open(path, encoding="utf-8") as handle:
-            data = json.load(handle)
-        if data.get("takesSectionVOList"):
-            first, second = parse_modern(name, data)
+        if use_norm:
+            npath = os.path.join(reports_dir, name)
+            if not os.path.isfile(npath):
+                raise SystemExit(f"missing normalized report {npath}")
+            with open(npath, encoding="utf-8") as handle:
+                report = json.load(handle)
+            first, second = records_from_report(report)
         else:
-            first, second = parse_legacy_html(name, data)
+            path = os.path.join(DATA_DIR, name)
+            with open(path, encoding="utf-8") as handle:
+                data = json.load(handle)
+            if data.get("takesSectionVOList"):
+                first, second = parse_modern(name, data)
+            else:
+                first, second = parse_legacy_html(name, data)
         first_readings.extend(first)
         second_readings.extend(second)
         if index % 250 == 0 or index == len(names):
@@ -575,7 +394,8 @@ def write_markdown(entries, pending, stats):
             continued = entry.get("continued_on") or []
             if continued:
                 extra = ", ".join(
-                    f"{item['date']} (`{item['file']}`)" for item in continued
+                    f"{item['date']} ({item.get('event') or 'resumed'}, `{item['file']}`)"
+                    for item in continued
                 )
                 lines.append(f"- **Continued:** {extra}")
             if sr.get("opening"):
@@ -614,6 +434,7 @@ def main():
         kind_counts[entry["kind"]] += 1
     payload = {
         "generated": date.today().isoformat(),
+        "parser_version": PARSER_VERSION,
         "source": DATA_DIR,
         "coverage": {
             "from": min((item["date"] for item in second_readings), default=""),

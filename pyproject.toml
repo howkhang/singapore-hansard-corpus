@@ -1,0 +1,8 @@
+[project]
+name = "singapore-hansard-corpus"
+version = "0.2.0"
+description = "Singapore Parliament Hansard sitting reports, Second Reading index, and checksummed shards"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31.0",
+]
