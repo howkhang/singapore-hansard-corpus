@@ -14009,9 +14009,65 @@
       "sections": 483,
       "sitting_date": "2026-07-07",
       "source_sha256": "39fceab787be7c9f25097a19135a54aeca2ee567e6d201277db5f30726be16d6"
+    },
+    {
+      "format": "modern",
+      "normalized_sha256": "14aee7134c666dbc02d9619268746dd0ee5bebaf628c5cad754d26751ca69f13",
+      "report_id": "sitting:2026-08-04",
+      "sections": 368,
+      "sitting_date": "2026-08-04",
+      "source_sha256": "ebc54a7e89616bc455ec54589ebd777f561c0091efebfdff1490451ac72b2b10"
+    },
+    {
+      "format": "modern",
+      "normalized_sha256": "6bbf0c2b060e44fc75dd20c1429dc3263d7895d1893a4defeba0d0b777ebd115",
+      "report_id": "sitting:2026-08-05",
+      "sections": 288,
+      "sitting_date": "2026-08-05",
+      "source_sha256": "70d8d0091d86cc15c2fdb1e431378365e313f7a1aa95ea1098d7e37106bff448"
+    },
+    {
+      "format": "modern",
+      "normalized_sha256": "ef5c66804e5ae9221df543dd8583ef3be16f7c46dc447a69ba572ec850d1779a",
+      "report_id": "sitting:2026-09-08",
+      "sections": 366,
+      "sitting_date": "2026-09-08",
+      "source_sha256": "3cef78fca8f09e942b601c0d77c32e96a7d1d38a58b16c7bf8d35b2d6b270206"
+    },
+    {
+      "format": "modern",
+      "normalized_sha256": "aeb4626d74bd8b2fefc8a6f0c77d21d3eab7d0d29b70f1e23d7f3656f797acc0",
+      "report_id": "sitting:2026-09-09",
+      "sections": 289,
+      "sitting_date": "2026-09-09",
+      "source_sha256": "093ce282cfc0fcb4bdaa330f7b19be990163b2a77dd4d727eb49fffc9cb801c2"
+    },
+    {
+      "format": "modern",
+      "normalized_sha256": "d2f4b512f90dae9a1a0cb0329be6718e7256d011d65007fefb0b426329e22700",
+      "report_id": "sitting:2026-09-10",
+      "sections": 266,
+      "sitting_date": "2026-09-10",
+      "source_sha256": "78295b31b1b96735f9d49f5d1b682a12d104852371b15611f68f31e32eb4377d"
+    },
+    {
+      "format": "modern",
+      "normalized_sha256": "157794c19bcce9daa09c1d1e7182967dab5db10960a442d82c92ced5eb226004",
+      "report_id": "sitting:2026-10-06",
+      "sections": 342,
+      "sitting_date": "2026-10-06",
+      "source_sha256": "4da4cd57da051bceb0764ba8cadc414e1f1848322e2ab20a6cdd9dfdfad3645d"
+    },
+    {
+      "format": "modern",
+      "normalized_sha256": "51d01fba7470042cd852882d6f96a598a1e1f0220f3be074b06ce7aa562a818b",
+      "report_id": "sitting:2026-10-07",
+      "sections": 266,
+      "sitting_date": "2026-10-07",
+      "source_sha256": "2cb6504d564f4594c8592a6bfdb5d241a94e534b4200b83179084e2ee754a5b4"
     }
   ],
   "parser_version": "hansard-normalized-v1.1",
   "schema_version": "hansard-normalized-v1",
-  "sittings": 1751
+  "sittings": 1758
 }

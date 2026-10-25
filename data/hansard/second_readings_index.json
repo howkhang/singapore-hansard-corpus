@@ -1,16 +1,16 @@
 {
-  "generated": "2026-09-19",
+  "generated": "2026-10-25",
   "parser_version": "second-readings-index-v7",
   "source": "./data/hansard/json",
   "coverage": {
     "from": "1955-05-25",
-    "to": "2026-05-07",
-    "second_readings": 2544,
-    "pending_first_readings": 299,
+    "to": "2026-10-07",
+    "second_readings": 2553,
+    "pending_first_readings": 302,
     "by_kind": {
-      "amendment": 1653,
-      "miscellaneous_amendment": 55,
-      "new_act": 759,
+      "amendment": 1656,
+      "miscellaneous_amendment": 57,
+      "new_act": 763,
       "repeal": 26,
       "supply": 51
     }
@@ -125170,6 +125170,663 @@
       },
       "link_confidence": "first_and_second_matched",
       "captured_at": null
+    },
+    {
+      "title": "Road Traffic (Miscellaneous Amendments) Bill",
+      "kind": "miscellaneous_amendment",
+      "long_title": "to amend the Road Traffic Act 1961 and the Motor Vehicles (Third-Party Risks and Compensation) Act 1960",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-07-07",
+        "file": "./data/hansard/json/2026-07-07.json",
+        "presented_by": "the Senior Minister of State for Home Affairs (Ms Sim Ann) on behalf of the Coordinating Minister for National Security and Minister for Home Affairs",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-07-07.json",
+          "section_id": "sitting:2026-07-07:takes:9",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 9,
+          "unit": "json_string",
+          "start": 0,
+          "end": 445,
+          "field": "takesSectionVOList.9.content",
+          "source_fragment_sha256": "05780dda7d1efe538df2feb41f8138d93032da3f646661a0efe08ab61eee4fbe",
+          "normalized_text_sha256": "8a08afc4f55725777a6ac307c19e4a418ce078e37e5ec324e50a4190e8fc7dfe",
+          "passage_sha256": "8a08afc4f55725777a6ac307c19e4a418ce078e37e5ec324e50a4190e8fc7dfe"
+        }
+      },
+      "second_reading": {
+        "date": "2026-08-04",
+        "file": "./data/hansard/json/2026-08-04.json",
+        "event": "opening",
+        "section_index": 7,
+        "moved_by": "",
+        "opening": "Road accidents, which can lead to severe and irreversible consequences for victims and their families are entirely preventable. Our accident rates and fatality numbers need to come down. Last year we had a record high of 149 fatalities – almost one death every two days on the roads. There are several pillars in our approach towards promoting road safety. One pillar is having strong and effective laws. Over the years, the Ministry has reviewed and updated the Road Traffic Act (RTA) to ensure that it remains fit-for-purpose. Since 2019, the Act has been amended four times. We seek to do so again today, to achieve three key objectives: First, strengthen accountability for the most egregious road conduct; Second, further deter driving under the influence of alcohol or drugs; and third, enhance the Traffic Police's ability to detect and enforce against traffic offences. Sir, the most…",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-08-04.json",
+          "section_id": "sitting:2026-08-04:takes:7",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 7,
+          "unit": "json_string",
+          "start": 0,
+          "end": 12216,
+          "field": "takesSectionVOList.7.content",
+          "source_fragment_sha256": "84907b490f14dab65ae51ec6c5f81bc2463a649fa3300470a3d349db1b7e70f7",
+          "normalized_text_sha256": "0acf3a675edc4841cf20dfd9a7bd2556ff0a493a6f8fe8a4041dadd2d8d658df",
+          "passage_sha256": "0acf3a675edc4841cf20dfd9a7bd2556ff0a493a6f8fe8a4041dadd2d8d658df"
+        }
+      },
+      "link_confidence": "first_and_second_matched",
+      "captured_at": null,
+      "continued_on": [
+        {
+          "date": "2026-08-04",
+          "file": "./data/hansard/json/2026-08-04.json",
+          "event": "resumed",
+          "link_confidence": "explicit_resumption",
+          "locator": {
+            "format": "normalized",
+            "file": "./data/hansard/json/2026-08-04.json",
+            "section_id": "sitting:2026-08-04:takes:9",
+            "html_offset": null,
+            "html_end": null,
+            "section_index": 9,
+            "unit": "json_string",
+            "start": 0,
+            "end": 230513,
+            "field": "takesSectionVOList.9.content",
+            "source_fragment_sha256": "a17991207ee52a91106842882176615d43e83c2a56c89bebc56ade580eb060c9",
+            "normalized_text_sha256": "3ec12ad38a9377b4e805d40db3b3b259c92351e908ec545e24b6911400fdbbbc",
+            "passage_sha256": "3ec12ad38a9377b4e805d40db3b3b259c92351e908ec545e24b6911400fdbbbc"
+          }
+        },
+        {
+          "date": "2026-08-04",
+          "file": "./data/hansard/json/2026-08-04.json",
+          "event": "resumed",
+          "link_confidence": "explicit_resumption",
+          "locator": {
+            "format": "normalized",
+            "file": "./data/hansard/json/2026-08-04.json",
+            "section_id": "sitting:2026-08-04:takes:11",
+            "html_offset": null,
+            "html_end": null,
+            "section_index": 11,
+            "unit": "json_string",
+            "start": 0,
+            "end": 34203,
+            "field": "takesSectionVOList.11.content",
+            "source_fragment_sha256": "4b46f9265fd37e2d1bd4cd8c717711155fda4425971193bf261fb346ca434015",
+            "normalized_text_sha256": "cb04adc9322669264414011c01f892e972f6b965b7bbf4d237c32638bb65c149",
+            "passage_sha256": "cb04adc9322669264414011c01f892e972f6b965b7bbf4d237c32638bb65c149"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Civil Defence Shelter and Fire Safety (Miscellaneous Amendment) Bill",
+      "kind": "miscellaneous_amendment",
+      "long_title": "",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": null,
+      "second_reading": {
+        "date": "2026-09-08",
+        "file": "./data/hansard/json/2026-09-08.json",
+        "event": "opening",
+        "section_index": 13,
+        "moved_by": "",
+        "opening": "As part of our efforts to ensure the Singapore Civil Defence Force's (SCDF's) regulatory regimes remain relevant and up to date, we have reviewed the Civil Defence Shelter Act and the Fire Safety Act to tighten SCDF's regulatory oversight over regulated shelter products and to reduce the regulatory burden on businesses involved in petroleum and flammable material (P&FM) activities. This Bill covers the following themes. One, to strengthen SCDF's oversight over regulated shelter products and empower SCDF to take appropriate actions against parties in the supply chain for non-compliance; two, to introduce a class licensing regime for the regulation of P&FM activities; three, to allow SCDF to appoint SEOs to conduct compliance checks for the transport of P&FM; and four, to clarify the responsibilities of premise owners and occupiers in relation to fire safety measures. We also have other…",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-09-08.json",
+          "section_id": "sitting:2026-09-08:takes:13",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 13,
+          "unit": "json_string",
+          "start": 0,
+          "end": 133116,
+          "field": "takesSectionVOList.13.content",
+          "source_fragment_sha256": "0e2b60a42479fe43c33f2ed4546e81093830a4e39f31fa2d9769f96058e5d5a1",
+          "normalized_text_sha256": "515b65c0600a095a4c0e94195925e38f3cf7fd770787c6930e1def9ce801a26e",
+          "passage_sha256": "515b65c0600a095a4c0e94195925e38f3cf7fd770787c6930e1def9ce801a26e"
+        }
+      },
+      "link_confidence": "second_reading_only",
+      "captured_at": null
+    },
+    {
+      "title": "Land Titles (Strata) (Amendment) Bill",
+      "kind": "amendment",
+      "long_title": "to amend the Land Titles (Strata) Act 1967 and to make consequential amendments to certain other Acts",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-08-04",
+        "file": "./data/hansard/json/2026-08-04.json",
+        "presented_by": "the Senior Minister of State for Law (Mr Murali Pillai) on behalf of the Minister for Law",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-08-04.json",
+          "section_id": "sitting:2026-08-04:takes:6",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 6,
+          "unit": "json_string",
+          "start": 0,
+          "end": 398,
+          "field": "takesSectionVOList.6.content",
+          "source_fragment_sha256": "3b558f4f08349678723ad70aa8c1db6bbbf44a5904cb4a8ee5c1aaff4c4fe1ff",
+          "normalized_text_sha256": "14c43eedfdfa75c1c3bd0eb445fb5fdd36a538bc3419072b3d02eaf025637729",
+          "passage_sha256": "14c43eedfdfa75c1c3bd0eb445fb5fdd36a538bc3419072b3d02eaf025637729"
+        }
+      },
+      "second_reading": {
+        "date": "2026-09-08",
+        "file": "./data/hansard/json/2026-09-08.json",
+        "event": "opening",
+        "section_index": 14,
+        "moved_by": "The Minister for Law (Mr Edwin Tong Chun Fai)",
+        "opening": "Within our small island, we must accommodate housing, industry, commerce, transport, defence, green spaces, water catchment and more – all of the infrastructure necessary for a modern city-state. Singapore's land constraints shape our approach towards the use of land and property in a very fundamental way. Land in Singapore is a scarce and finite national resource. It is therefore critical that we facilitate the renewal and rejuvenation of our urban environment so that our tight land resources can accommodate the evolving needs of Singaporeans. Buildings, like all physical things, they age. And as they age, the maintenance and upkeep becomes increasingly pressing: in the early years of a development, maintenance is more manageable and costs, perhaps, more predictable. But over time, major components reach the end of their service lives; repair bills grow larger and more frequent; and…",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-09-08.json",
+          "section_id": "sitting:2026-09-08:takes:14",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 14,
+          "unit": "json_string",
+          "start": 0,
+          "end": 144205,
+          "field": "takesSectionVOList.14.content",
+          "source_fragment_sha256": "b9d3dedec3f455e2319457e362f37b0047cb30ef9fbf0c7792d031d3aa0477b3",
+          "normalized_text_sha256": "239b67b021f1487b3b0cfaa97dabe8b9b6fcc4da5a1e3d351d2ae34121becd8e",
+          "passage_sha256": "239b67b021f1487b3b0cfaa97dabe8b9b6fcc4da5a1e3d351d2ae34121becd8e"
+        }
+      },
+      "link_confidence": "first_and_second_matched",
+      "captured_at": null,
+      "continued_on": [
+        {
+          "date": "2026-09-08",
+          "file": "./data/hansard/json/2026-09-08.json",
+          "event": "resumed",
+          "link_confidence": "explicit_resumption",
+          "locator": {
+            "format": "normalized",
+            "file": "./data/hansard/json/2026-09-08.json",
+            "section_id": "sitting:2026-09-08:takes:16",
+            "html_offset": null,
+            "html_end": null,
+            "section_index": 16,
+            "unit": "json_string",
+            "start": 0,
+            "end": 3585,
+            "field": "takesSectionVOList.16.content",
+            "source_fragment_sha256": "8f9da0138b2d83c6c7e69ee793ad0c988d252d6693bfc4721f77d47a488385df",
+            "normalized_text_sha256": "f45ae6290b5f6057ad78badb50bac9601edcb9ba349f10556887d7136dc0e70b",
+            "passage_sha256": "f45ae6290b5f6057ad78badb50bac9601edcb9ba349f10556887d7136dc0e70b"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Scams (Countermeasures) and Other Matters Bill",
+      "kind": "new_act",
+      "long_title": "to amend the Protection from Scams Act 2025 and the Miscellaneous Offences (Public Order and Nuisance) Act 1906 to counter and prevent scams, to amend the Online Criminal Harms Act 2023 and the Police Force Act 2004 to enhance enforcement measures and to make related and consequential amendments to the Banking Act 1970",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-08-04",
+        "file": "./data/hansard/json/2026-08-04.json",
+        "presented_by": "the Senior Minister of State for Home Affairs (Mr Goh Pei Ming) on behalf of the Senior Minister, Coordinating Minister for National Security and Minister for Home Affairs",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-08-04.json",
+          "section_id": "sitting:2026-08-04:takes:4",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 4,
+          "unit": "json_string",
+          "start": 0,
+          "end": 709,
+          "field": "takesSectionVOList.4.content",
+          "source_fragment_sha256": "c2096c3f649bb5de07341eaf2709ce744ba7fe70bdb8c00fa60e7b57b62c0718",
+          "normalized_text_sha256": "0cde73c16b5584453370cb85fcf172503f1d4e519119440c3d29241d4d3acf5f",
+          "passage_sha256": "0cde73c16b5584453370cb85fcf172503f1d4e519119440c3d29241d4d3acf5f"
+        }
+      },
+      "second_reading": {
+        "date": "2026-09-08",
+        "file": "./data/hansard/json/2026-09-08.json",
+        "event": "opening",
+        "section_index": 17,
+        "moved_by": "The Senior Minister of State for Home Affairs (Mr Goh Pei Ming) (for the Senior Minister, Coordinating Minister for National Security and Minister for Home Affairs)",
+        "opening": "Sir, Singapore's scams situation has improved since 2025. After consecutive years of increases, both scam cases and losses fell in 2025. This improvement continued into the first half of 2026, where reported scam cases fell by 14.4% to about 16,800 cases, while losses fell by 17.9% to about $411 million, compared to the same period last year. This progress is a result of our strong public-private collaboration, robust enforcement and legal framework, and the adoption of technology. I would like to thank Members of this House for your strong support in our anti-scam efforts, and your personal contributions to spreading anti-scam public education to your constituents. Our fight, however, is far from over. We still receive on average about 90 reported scam cases, involving about $2 million lost, every day. Globally, the scam situation continues to worsen, as syndicates evade international…",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-09-08.json",
+          "section_id": "sitting:2026-09-08:takes:17",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 17,
+          "unit": "json_string",
+          "start": 0,
+          "end": 99169,
+          "field": "takesSectionVOList.17.content",
+          "source_fragment_sha256": "16e319172b9c65652fb6494463153e610d5d090bba03bdbbe29879357701ac6c",
+          "normalized_text_sha256": "8d49bf8fee4e777d5e0245365483c7f151eacaaba4f9f8392d21b31d9fcc1440",
+          "passage_sha256": "8d49bf8fee4e777d5e0245365483c7f151eacaaba4f9f8392d21b31d9fcc1440"
+        }
+      },
+      "link_confidence": "first_and_second_matched",
+      "captured_at": null,
+      "continued_on": [
+        {
+          "date": "2026-09-09",
+          "file": "./data/hansard/json/2026-09-09.json",
+          "event": "resumed",
+          "link_confidence": "explicit_resumption",
+          "locator": {
+            "format": "normalized",
+            "file": "./data/hansard/json/2026-09-09.json",
+            "section_id": "sitting:2026-09-09:takes:20",
+            "html_offset": null,
+            "html_end": null,
+            "section_index": 20,
+            "unit": "json_string",
+            "start": 0,
+            "end": 92256,
+            "field": "takesSectionVOList.20.content",
+            "source_fragment_sha256": "c68e9de558453f71a1c69bffe45d00095b64afc3ad013d3c869ac8b81a314eab",
+            "normalized_text_sha256": "a9cd2b5872f0afd51e93cb200ae20c2cdcd1639f230e9ec583163d49d445813f",
+            "passage_sha256": "a9cd2b5872f0afd51e93cb200ae20c2cdcd1639f230e9ec583163d49d445813f"
+          }
+        },
+        {
+          "date": "2026-09-09",
+          "file": "./data/hansard/json/2026-09-09.json",
+          "event": "resumed",
+          "link_confidence": "explicit_resumption",
+          "locator": {
+            "format": "normalized",
+            "file": "./data/hansard/json/2026-09-09.json",
+            "section_id": "sitting:2026-09-09:takes:22",
+            "html_offset": null,
+            "html_end": null,
+            "section_index": 22,
+            "unit": "json_string",
+            "start": 0,
+            "end": 10145,
+            "field": "takesSectionVOList.22.content",
+            "source_fragment_sha256": "05d6ad116b5f097b741b8742227a38352f8b3562fc8ace39dc9a37c8f6476a2e",
+            "normalized_text_sha256": "e72462d0d972c19c45201dc40222c51588d7e4f3f4269d33d8d25cdcc3dd5ec6",
+            "passage_sha256": "e72462d0d972c19c45201dc40222c51588d7e4f3f4269d33d8d25cdcc3dd5ec6"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Health Sciences Authority (Amendment) and Other Matters Bill",
+      "kind": "amendment",
+      "long_title": "to amend the Health Sciences Authority Act 2001, the Biological Agents and Toxins Act 2005, the Human Biomedical Research Act 2015 and the Healthcare Services Act 2020, and to make related and miscellaneous amendments to certain other Acts",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-08-04",
+        "file": "./data/hansard/json/2026-08-04.json",
+        "presented_by": "the Minister of State for Health (Ms Rahayu Mahzam) on behalf of the Coordinating Minister for Social Policies and Minister for Health",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-08-04.json",
+          "section_id": "sitting:2026-08-04:takes:5",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 5,
+          "unit": "json_string",
+          "start": 0,
+          "end": 596,
+          "field": "takesSectionVOList.5.content",
+          "source_fragment_sha256": "863421b7b9cb78e3699f1ab056958b422bedf96b15e12d274101695a284ea7ce",
+          "normalized_text_sha256": "30b25e669793b70773108418ba9048053d3414eb9218096c9833d261e2b54a25",
+          "passage_sha256": "30b25e669793b70773108418ba9048053d3414eb9218096c9833d261e2b54a25"
+        }
+      },
+      "second_reading": {
+        "date": "2026-09-09",
+        "file": "./data/hansard/json/2026-09-09.json",
+        "event": "opening",
+        "section_index": 23,
+        "moved_by": "The Minister of State for Health (Ms Rahayu Mahzam) (for the Coordinating Minister for Social Policies and Minister for Health)",
+        "opening": "Singapore's strong healthcare reputation rests in part on a regulatory system that safeguards patients and public health while enabling Singaporeans to benefit from safe and effective healthcare innovations. But healthcare is evolving rapidly with increasing integration across new models of care, digital health, genomics and artificial intelligence (AI). These may not fit neatly within traditional regulatory boundaries and hence, our regulatory ecosystem must also evolve and respond in an equally integrated manner. This is the purpose of today's Bill. Today, our regulatory ecosystem is organised across three agencies. First, the Ministry of Health (MOH) regulates healthcare services, health information, human biomedical research and biosafety. Second, the Health Sciences Authority (HSA) regulates health products such as medicines and medical devices. Third, the Secretariat of Healthcare…",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-09-09.json",
+          "section_id": "sitting:2026-09-09:takes:23",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 23,
+          "unit": "json_string",
+          "start": 0,
+          "end": 120515,
+          "field": "takesSectionVOList.23.content",
+          "source_fragment_sha256": "587a757f7e8f64049fd307dcded79a9416dee2f53921ea0ab36f8957224af274",
+          "normalized_text_sha256": "0a73ce1edcbc57f8989ce6eb21228eda15a1db6b1ec23a40960d6ed7f733de30",
+          "passage_sha256": "0a73ce1edcbc57f8989ce6eb21228eda15a1db6b1ec23a40960d6ed7f733de30"
+        }
+      },
+      "link_confidence": "first_and_second_matched",
+      "captured_at": null
+    },
+    {
+      "title": "Digital Infrastructure Bill",
+      "kind": "new_act",
+      "long_title": "to provide for the licensing of providers of major foundational digital infrastructure services and operators of data centres in Singapore, and for matters relating thereto, and to make related amendments to the Cybersecurity Act 2018",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-09-08",
+        "file": "./data/hansard/json/2026-09-08.json",
+        "presented_by": "the Senior Minister of State for Digital Development and Information (Mr Tan Kiat How) (on behalf of the Minister of Digital Development and Information)",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-09-08.json",
+          "section_id": "sitting:2026-09-08:takes:10",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 10,
+          "unit": "json_string",
+          "start": 0,
+          "end": 579,
+          "field": "takesSectionVOList.10.content",
+          "source_fragment_sha256": "96ca799519cb836ecf4889b3dfe7fe959789e697af3ca2af08cce2109d4404c3",
+          "normalized_text_sha256": "546a541426999795fb031edba9e437e9c26314a5412920f79cc6775c86220b6d",
+          "passage_sha256": "546a541426999795fb031edba9e437e9c26314a5412920f79cc6775c86220b6d"
+        }
+      },
+      "second_reading": {
+        "date": "2026-10-06",
+        "file": "./data/hansard/json/2026-10-06.json",
+        "event": "opening",
+        "section_index": 14,
+        "moved_by": "The Senior Minister of State for Digital Development and Information (Mr Tan Kiat How) (for the Minister for Digital Development and Information)",
+        "opening": "Sir, we are introducing the Digital Infrastructure Bill to put in place the foundations for the next phase of our digital economy and society, by ensuring that our digital infrastructure services are resilient, secure and environmentally sustainable, so that businesses and Singaporeans can continue to rely on it. I will first explain why the Bill is needed, so that Members can better understand how the Bill supports Singapore's long-term competitiveness and growth. I will then explain the Bill's key features. Primarily, the Bill establishes two licensing regimes: first, for the security and resilience of foundational digital infrastructure services, namely major data centres and cloud services; and second, for the environmental sustainability of data centres. Finally, I will cover the key administrative and enforcement provisions that support these regimes, as well as related amendments…",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-10-06.json",
+          "section_id": "sitting:2026-10-06:takes:14",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 14,
+          "unit": "json_string",
+          "start": 0,
+          "end": 112641,
+          "field": "takesSectionVOList.14.content",
+          "source_fragment_sha256": "49c7e7cc9683602a4059e1ff940a8d7d8808a6cb4f457294b558bbf0557dd9dc",
+          "normalized_text_sha256": "95dd9b9bf8fce716cd9d1a00a0ab3a4bd6290cdfb0d16ca18dec471abfa8f0bc",
+          "passage_sha256": "95dd9b9bf8fce716cd9d1a00a0ab3a4bd6290cdfb0d16ca18dec471abfa8f0bc"
+        }
+      },
+      "link_confidence": "first_and_second_matched",
+      "captured_at": null,
+      "continued_on": [
+        {
+          "date": "2026-10-06",
+          "file": "./data/hansard/json/2026-10-06.json",
+          "event": "resumed",
+          "link_confidence": "explicit_resumption",
+          "locator": {
+            "format": "normalized",
+            "file": "./data/hansard/json/2026-10-06.json",
+            "section_id": "sitting:2026-10-06:takes:16",
+            "html_offset": null,
+            "html_end": null,
+            "section_index": 16,
+            "unit": "json_string",
+            "start": 0,
+            "end": 48912,
+            "field": "takesSectionVOList.16.content",
+            "source_fragment_sha256": "7031a00cafdd975cb2496a3bfbae61955cde2d9459b37b269b7fc2199518290b",
+            "normalized_text_sha256": "4fb1b570eb831069ae556cc8d776426673f78d407a99e2bff40337c8e9a7ff0f",
+            "passage_sha256": "4fb1b570eb831069ae556cc8d776426673f78d407a99e2bff40337c8e9a7ff0f"
+          }
+        },
+        {
+          "date": "2026-10-07",
+          "file": "./data/hansard/json/2026-10-07.json",
+          "event": "resumed",
+          "link_confidence": "explicit_resumption",
+          "locator": {
+            "format": "normalized",
+            "file": "./data/hansard/json/2026-10-07.json",
+            "section_id": "sitting:2026-10-07:takes:12",
+            "html_offset": null,
+            "html_end": null,
+            "section_index": 12,
+            "unit": "json_string",
+            "start": 0,
+            "end": 62531,
+            "field": "takesSectionVOList.12.content",
+            "source_fragment_sha256": "a181ee46045c652b1362a26ec90373f7705a2b4237b1ee19147cabfe2ea33b12",
+            "normalized_text_sha256": "b9700753c48dcb936443c91609477927a192ec99f3c50a7df838a7efb286a86c",
+            "passage_sha256": "b9700753c48dcb936443c91609477927a192ec99f3c50a7df838a7efb286a86c"
+          }
+        },
+        {
+          "date": "2026-10-07",
+          "file": "./data/hansard/json/2026-10-07.json",
+          "event": "resumed",
+          "link_confidence": "explicit_resumption",
+          "locator": {
+            "format": "normalized",
+            "file": "./data/hansard/json/2026-10-07.json",
+            "section_id": "sitting:2026-10-07:takes:14",
+            "html_offset": null,
+            "html_end": null,
+            "section_index": 14,
+            "unit": "json_string",
+            "start": 0,
+            "end": 57754,
+            "field": "takesSectionVOList.14.content",
+            "source_fragment_sha256": "9c1c1973d4f1ac71c7e1ae8e28085f6e5dca8fa523b5d43d3d08eca147b99641",
+            "normalized_text_sha256": "c658035d2321677d49f738c3d1510c3a2ad88b4d9e7ace69c6a06eeb86903de9",
+            "passage_sha256": "c658035d2321677d49f738c3d1510c3a2ad88b4d9e7ace69c6a06eeb86903de9"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Finance (Income Taxes) Bill",
+      "kind": "new_act",
+      "long_title": "to amend the Income Tax Act 1947, the Multinational Enterprise (Minimum Tax) Act 2024, and the Economic Expansion Incentives (Relief from Income Tax) Act 1967, and to make related amendments to the Goods and Services Tax Act 1993 and the Property Tax Act 1960",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-09-08",
+        "file": "./data/hansard/json/2026-09-08.json",
+        "presented_by": "the Second Minister for Finance (Mr Jeffrey Siow)",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-09-08.json",
+          "section_id": "sitting:2026-09-08:takes:8",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 8,
+          "unit": "json_string",
+          "start": 0,
+          "end": 540,
+          "field": "takesSectionVOList.8.content",
+          "source_fragment_sha256": "9f30581d71d842a8fee0f8ff903e3673f8ce5d33248407ae1a350eb91af73e57",
+          "normalized_text_sha256": "b025b7c07d4cd3f2ff5ccd6ea599768d3c24cfd125dd1059fb5cbdd0d9f8b7b4",
+          "passage_sha256": "b025b7c07d4cd3f2ff5ccd6ea599768d3c24cfd125dd1059fb5cbdd0d9f8b7b4"
+        }
+      },
+      "second_reading": {
+        "date": "2026-10-06",
+        "file": "./data/hansard/json/2026-10-06.json",
+        "event": "opening",
+        "section_index": 11,
+        "moved_by": "The Second Minister for Finance (Mr Jeffrey Siow)",
+        "opening": "This past year has been challenging for many businesses. The conflict in the Strait of Hormuz has disrupted supply chains and pushed up energy costs. At the same time, artificial intelligence (AI) is transforming industries, and companies must adapt quickly to stay competitive. This Bill does three things. First, it brings into legal effect tax measures, that were announced at this year's Budget and during the April Parliament Sitting to help businesses cope with these cost pressures and invest in AI. Second, it introduces amendments to comply with the latest Pillar Two global minimum tax rules, which will provide greater certainty to multinational enterprises. Third, it introduces changes to simplify tax filing for taxpayers. Let me first start with the first set of amendments on business support. Clause 31 introduces the Corporate Income Tax Rebates and Cash Grants for the Year of…",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-10-06.json",
+          "section_id": "sitting:2026-10-06:takes:11",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 11,
+          "unit": "json_string",
+          "start": 0,
+          "end": 129103,
+          "field": "takesSectionVOList.11.content",
+          "source_fragment_sha256": "0bd3a63386419283e8130b237de8f13f7cdd9656b9bf5f288ee3629aba6fbccb",
+          "normalized_text_sha256": "383d48a72a84eafe2d639070fa808fac4dbd54b1ff0066a0faf350fff48d5535",
+          "passage_sha256": "383d48a72a84eafe2d639070fa808fac4dbd54b1ff0066a0faf350fff48d5535"
+        }
+      },
+      "link_confidence": "first_and_second_matched",
+      "captured_at": null
+    },
+    {
+      "title": "Financial Services and Markets (Amendment) Bill",
+      "kind": "amendment",
+      "long_title": "to amend the Financial Services and Markets Act 2022, and to make related amendments to the Banking Act 1970, the Financial Advisers Act 2001, the Financial Holding Companies Act 2013, the Insurance Act 1966, the Securities and Futures Act 2001, the Trust Companies Act 2005 and the Variable Capital Companies Act 2018",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-09-08",
+        "file": "./data/hansard/json/2026-09-08.json",
+        "presented_by": "the Minister of State for Foreign Affairs and National Development (Mr Alvin Tan) (on behalf of the Deputy Prime Minister and Minister for Trade and Industry (Trade))",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-09-08.json",
+          "section_id": "sitting:2026-09-08:takes:9",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 9,
+          "unit": "json_string",
+          "start": 0,
+          "end": 676,
+          "field": "takesSectionVOList.9.content",
+          "source_fragment_sha256": "681e8f14c5dccbf73fff991bace742efb771e2a9fe3180bd7b15b0ff074dc67b",
+          "normalized_text_sha256": "9786c981f9697b9d4a170d510f24d0513ebfd2fe038a50f95bdf8f3188edb240",
+          "passage_sha256": "9786c981f9697b9d4a170d510f24d0513ebfd2fe038a50f95bdf8f3188edb240"
+        }
+      },
+      "second_reading": {
+        "date": "2026-10-06",
+        "file": "./data/hansard/json/2026-10-06.json",
+        "event": "opening",
+        "section_index": 12,
+        "moved_by": "",
+        "opening": "the Deputy Prime Minister and Minister for Energy, Trade and Industry (Trade), in his capacity as the Minister-in-charge of the Monetary Authority of Singapore (MAS), I move, \"That the Financial Services and Markets (Amendment) Bill 2026 be now read a Second time.\" Sir, MAS' regulatory regime aims to preserve the resilience and soundness of Singapore's financial system. This includes ensuring that distressed financial institutions can be resolved in a manner that preserves financial stability and maintains confidence in our financial system. MAS is currently able to exercise resolution powers under the Financial Services and Markets Act 2022 to secure such outcomes, including bailing in subordinated creditors of a distressed FI to restore its solvency. To complement these powers, the Bill will allow MAS to impose Total Loss-absorbing Capacity (TLAC) requirements. Under this TLAC…",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-10-06.json",
+          "section_id": "sitting:2026-10-06:takes:12",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 12,
+          "unit": "json_string",
+          "start": 0,
+          "end": 77022,
+          "field": "takesSectionVOList.12.content",
+          "source_fragment_sha256": "3dced4ea976b33cf0d1a80c706624874afff55c8a492a9f7009ea1a21175f30c",
+          "normalized_text_sha256": "e7f51255a4226a3d347877e50266b799f2bed8c44d178514368be503b4f96288",
+          "passage_sha256": "e7f51255a4226a3d347877e50266b799f2bed8c44d178514368be503b4f96288"
+        }
+      },
+      "link_confidence": "first_and_second_matched",
+      "captured_at": null
+    },
+    {
+      "title": "Land Transport and Related Matters (No 2) Bill",
+      "kind": "new_act",
+      "long_title": "to amend the Active Mobility Act 2017, the Electric Vehicles Charging Act 2022, the Road Traffic Act 1961 and the Small Motorised Vehicles (Safety) Act 2020, and to make consequential and related amendments to certain other Acts",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-09-08",
+        "file": "./data/hansard/json/2026-09-08.json",
+        "presented_by": "the Minister of State for Transport (Mr Baey Yam Keng) (on behalf of the Minister for Transport)",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-09-08.json",
+          "section_id": "sitting:2026-09-08:takes:11",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 11,
+          "unit": "json_string",
+          "start": 0,
+          "end": 516,
+          "field": "takesSectionVOList.11.content",
+          "source_fragment_sha256": "81019d6d48a30ba74206d7ccfd8c846fe791b3f1ce8e829c837ef16726fff65a",
+          "normalized_text_sha256": "eafbd796e947fc16547056ef9683dee59562f8ce74e9b914ac36fc1ec0b9ac13",
+          "passage_sha256": "eafbd796e947fc16547056ef9683dee59562f8ce74e9b914ac36fc1ec0b9ac13"
+        }
+      },
+      "second_reading": {
+        "date": "2026-10-07",
+        "file": "./data/hansard/json/2026-10-07.json",
+        "event": "opening",
+        "section_index": 15,
+        "moved_by": "The Minister of State for Transport (Mr Baey Yam Keng) (for the Minister for Transport)",
+        "opening": "The proposed amendments aim to keep our land transport regulations relevant and effective. The Bill cuts across multiple land transport areas and reflects two complementary principles that have consistently guided our approach: one, strengthening public safety where risks have grown or evolved; and two, streamlining rules where we can responsibly reduce regulatory burden on individuals and businesses. I will now go through the five key areas of amendments. First, we will strengthen our efforts to stem unlawful use of deregistered vehicles. Deregistered vehicles pose a risk to road safety as they are no longer covered by insurance or subject to the Land Transport Authority's (LTA's) periodic inspections. It is thus illegal to keep or use deregistered vehicles on our roads. More than 99% of deregistered vehicles are properly disposed of. However, a small number of vehicles, about 1,900…",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-10-07.json",
+          "section_id": "sitting:2026-10-07:takes:15",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 15,
+          "unit": "json_string",
+          "start": 0,
+          "end": 209516,
+          "field": "takesSectionVOList.15.content",
+          "source_fragment_sha256": "c3be3ddc70dd6d2f2af0380ac23f8e1a6d86dba77b5e0b8ccc9b59078717cc58",
+          "normalized_text_sha256": "02b709211cc6e5a4d8a593646adb9e4e146e5202a3273324e5bfc9b8290497f4",
+          "passage_sha256": "02b709211cc6e5a4d8a593646adb9e4e146e5202a3273324e5bfc9b8290497f4"
+        }
+      },
+      "link_confidence": "first_and_second_matched",
+      "captured_at": null,
+      "continued_on": [
+        {
+          "date": "2026-10-07",
+          "file": "./data/hansard/json/2026-10-07.json",
+          "event": "resumed",
+          "link_confidence": "explicit_resumption",
+          "locator": {
+            "format": "normalized",
+            "file": "./data/hansard/json/2026-10-07.json",
+            "section_id": "sitting:2026-10-07:takes:17",
+            "html_offset": null,
+            "html_end": null,
+            "section_index": 17,
+            "unit": "json_string",
+            "start": 0,
+            "end": 35125,
+            "field": "takesSectionVOList.17.content",
+            "source_fragment_sha256": "8099dec9e68c027226d51ef546d1e1b91d97a64012fdbd7b00038fb56fea6b08",
+            "normalized_text_sha256": "7eb19e1ee6e5f530cda7be5b207f22dda3d48077c0d26022d002027cd9cfb2e2",
+            "passage_sha256": "7eb19e1ee6e5f530cda7be5b207f22dda3d48077c0d26022d002027cd9cfb2e2"
+          }
+        }
+      ]
     }
   ],
   "pending_second_reading": [
@@ -134412,30 +135069,123 @@
       "captured_at": null
     },
     {
-      "title": "Road Traffic (Miscellaneous Amendments) Bill",
+      "title": "Civil Defence Shelter and Fire Safety (Miscellaneous Amendments) Bill",
       "kind": "miscellaneous_amendment",
-      "long_title": "to amend the Road Traffic Act 1961 and the Motor Vehicles (Third-Party Risks and Compensation) Act 1960",
+      "long_title": "to amend the Civil Defence Shelter Act 1997 and the Fire Safety Act 1993, and to repeal the Chemical Weapons (Prohibition) (Amendment) Act 2019",
       "parliament": 15,
       "session": 1,
       "parser_version": "second-readings-index-v7",
       "first_reading": {
-        "date": "2026-07-07",
-        "file": "./data/hansard/json/2026-07-07.json",
-        "presented_by": "the Senior Minister of State for Home Affairs (Ms Sim Ann) on behalf of the Coordinating Minister for National Security and Minister for Home Affairs",
+        "date": "2026-08-04",
+        "file": "./data/hansard/json/2026-08-04.json",
+        "presented_by": "the Senior Minister of State for Home Affairs (Mr Goh Pei Ming) on behalf of the Senior Minister, Coordinating Minister for National Security and Minister for Home Affairs",
         "locator": {
           "format": "normalized",
-          "file": "./data/hansard/json/2026-07-07.json",
-          "section_id": "sitting:2026-07-07:takes:9",
+          "file": "./data/hansard/json/2026-08-04.json",
+          "section_id": "sitting:2026-08-04:takes:3",
           "html_offset": null,
           "html_end": null,
-          "section_index": 9,
+          "section_index": 3,
           "unit": "json_string",
           "start": 0,
-          "end": 445,
-          "field": "takesSectionVOList.9.content",
-          "source_fragment_sha256": "05780dda7d1efe538df2feb41f8138d93032da3f646661a0efe08ab61eee4fbe",
-          "normalized_text_sha256": "8a08afc4f55725777a6ac307c19e4a418ce078e37e5ec324e50a4190e8fc7dfe",
-          "passage_sha256": "8a08afc4f55725777a6ac307c19e4a418ce078e37e5ec324e50a4190e8fc7dfe"
+          "end": 511,
+          "field": "takesSectionVOList.3.content",
+          "source_fragment_sha256": "604d4aa83625ecbd6c0e015725f5a730f4600e8eee8be34115e5cf64c30a03fa",
+          "normalized_text_sha256": "f6ecf673133637e18a2cfb7b134fcedbc94d9f3aaadca6f796154d1395a8be13",
+          "passage_sha256": "f6ecf673133637e18a2cfb7b134fcedbc94d9f3aaadca6f796154d1395a8be13"
+        }
+      },
+      "second_reading": null,
+      "link_confidence": "first_reading_only",
+      "captured_at": null
+    },
+    {
+      "title": "Administration of Muslim Law (Amendment) Bill",
+      "kind": "amendment",
+      "long_title": "to amend the Administration of Muslim Law Act 1966 and to make consequential and related amendments to certain other Acts",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-10-06",
+        "file": "./data/hansard/json/2026-10-06.json",
+        "presented_by": "the Acting Minister-in-charge of Muslim Affairs (Mr Zaqy Mohamad)",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-10-06.json",
+          "section_id": "sitting:2026-10-06:takes:7",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 7,
+          "unit": "json_string",
+          "start": 0,
+          "end": 388,
+          "field": "takesSectionVOList.7.content",
+          "source_fragment_sha256": "a9bf65b146cb6056eef45e023d57a75e1994c887dafbab7912c5d3e794ae06f7",
+          "normalized_text_sha256": "e397058a06ace3b64dfccc3a9e42de5cb266dfae92ab2bdb9f9f67258ffd3c31",
+          "passage_sha256": "e397058a06ace3b64dfccc3a9e42de5cb266dfae92ab2bdb9f9f67258ffd3c31"
+        }
+      },
+      "second_reading": null,
+      "link_confidence": "first_reading_only",
+      "captured_at": null
+    },
+    {
+      "title": "Maritime and Port Authority of Singapore (Amendment) Bill",
+      "kind": "amendment",
+      "long_title": "to amend the Maritime and Port Authority of Singapore Act 1996 and to make consequential and related amendments to certain other Acts",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-10-06",
+        "file": "./data/hansard/json/2026-10-06.json",
+        "presented_by": "the Senior Minister of State for Transport (Mr Murali Pillai) (on behalf of the Minister for Transport)",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-10-06.json",
+          "section_id": "sitting:2026-10-06:takes:8",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 8,
+          "unit": "json_string",
+          "start": 0,
+          "end": 448,
+          "field": "takesSectionVOList.8.content",
+          "source_fragment_sha256": "7f89f9e1d95c0d7662435d43cce06b2066931e25a523191b688b168defa1a5a4",
+          "normalized_text_sha256": "02ab5a46903e76c64a5f91c21c036b31f65e5b0366cd40157b52d9d775beacac",
+          "passage_sha256": "02ab5a46903e76c64a5f91c21c036b31f65e5b0366cd40157b52d9d775beacac"
+        }
+      },
+      "second_reading": null,
+      "link_confidence": "first_reading_only",
+      "captured_at": null
+    },
+    {
+      "title": "Statutes (Miscellaneous Amendments) (No 2) Bill",
+      "kind": "miscellaneous_amendment",
+      "long_title": "to make miscellaneous amendments to certain Acts in connection with the renaming of the Ministry of Trade and Industry",
+      "parliament": 15,
+      "session": 1,
+      "parser_version": "second-readings-index-v7",
+      "first_reading": {
+        "date": "2026-10-06",
+        "file": "./data/hansard/json/2026-10-06.json",
+        "presented_by": "the Minister for Energy, Trade and Industry (Energy and Industry) (Dr Tan See Leng)",
+        "locator": {
+          "format": "normalized",
+          "file": "./data/hansard/json/2026-10-06.json",
+          "section_id": "sitting:2026-10-06:takes:6",
+          "html_offset": null,
+          "html_end": null,
+          "section_index": 6,
+          "unit": "json_string",
+          "start": 0,
+          "end": 403,
+          "field": "takesSectionVOList.6.content",
+          "source_fragment_sha256": "a6a5881109b1a0620b10820c3f3b3e51ddd778eccd3623fa1b0bedf80e86e006",
+          "normalized_text_sha256": "c5524ca6197a5f5d00ef7d4870a3d27c59a44038721b319386f6b2b696761a8d",
+          "passage_sha256": "c5524ca6197a5f5d00ef7d4870a3d27c59a44038721b319386f6b2b696761a8d"
         }
       },
       "second_reading": null,

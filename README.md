@@ -1,6 +1,6 @@
 # Singapore Hansard corpus
 
-Sitting reports of the Singapore Parliament (and earlier Legislative Assembly) from **22 April 1955** to **7 July 2026**, plus a candidate Second Reading index.
+Sitting reports of the Singapore Parliament (and earlier Legislative Assembly) from **22 April 1955** to **7 October 2026**, plus a candidate Second Reading index.
 
 Hansard is legislative history, not enacted law. A ministerial speech does not prove the later Act text, Parliament’s collective intention, or that a court would give the passage weight. Use it with the enacted provision and Singapore interpretation rules (Interpretation Act 1965 s 9A).
 
@@ -20,6 +20,12 @@ Raw sittings land in `data/hansard/json/YYYY-MM-DD.json`. Two payload shapes app
 - **modern** — `metadata` + `takesSectionVOList` (from about 2012)
 - **legacy** — `htmlFullContent` HTML (1955–early 2010s)
 
+Capture sidecars for newly acquired reports are tracked alongside the shard
+release. Keep them when unpacking and rebuilding: their capture times contribute
+to the normalized report hashes. The current snapshot contains **1,758 sittings**
+and **2,553 Second Readings**, with manifest SHA-256
+`f20f285462f4bd0e00e6de8ac3b536c970cb800f84429f96ef71f98602d76e4c`.
+
 ## Share / rebuild shards
 
 ```sh
@@ -36,6 +42,25 @@ python3 parl_crawler.py sitting_dates.txt
 ```
 
 Existing files are skipped only if they still validate as a Hansard report for that date. Error JSON and empty files are not treated as success. Any failed date exits non-zero.
+
+## Monitor new sittings
+
+This repository owns PARL discovery, the sitting queue, and Hansard acquisition.
+The sibling `singapore-law-substrate` imports validated normalized exports.
+
+```sh
+python3 parl_monitor.py run --lookback-days 90 --votes --budget 5
+python3 parl_monitor.py status
+```
+
+The monitor reads SGPC PARL notices and Order Papers directly, records revisions,
+and checks the visible Parliament Votes and Proceedings page. Announcement dates
+are separate from sitting dates. Valid captures automatically feed a complete
+snapshot rebuild, including the index, export, and verified shards. The previous
+release is replaced only after the build passes. Use `python3 parl_monitor.py refresh`
+to publish captures already staged under `var/monitoring/parl/reports/`.
+Partial discovery or unsuccessful acquisition exits non-zero and retains evidence
+and retry state. See [monitor operation and ownership](docs/parl-monitor.md).
 
 ## Normalized layer
 

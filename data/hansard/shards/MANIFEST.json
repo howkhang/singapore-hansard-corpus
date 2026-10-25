@@ -1,12 +1,12 @@
 {
-  "generated": "2026-09-19",
+  "generated": "2026-10-25",
   "algorithm": "sha256",
   "source": "./data/hansard/json",
-  "sittings": 1751,
+  "sittings": 1758,
   "from": "1955-04-22",
-  "to": "2026-07-07",
-  "uncompressed_bytes": 616880101,
-  "compressed_bytes": 206320622,
+  "to": "2026-10-07",
+  "uncompressed_bytes": 624198317,
+  "compressed_bytes": 209207700,
   "shards": [
     {
       "file": "hansard-json-1955-04-22-to-1981-12-22.tar.gz",
@@ -1845,16 +1845,16 @@
       "compressed_bytes": 47723865
     },
     {
-      "file": "hansard-json-2024-10-14-to-2026-07-07.tar.gz",
-      "sha256": "47002081f03a15479321e1186b0880bbf83de9811652652f4fd78362dec476cc",
+      "file": "hansard-json-2024-10-14-to-2026-10-07.tar.gz",
+      "sha256": "6395f322732ae955503d9d452e8735440f4f2b22f3edc84d01819b8e466c6881",
       "from": "2024-10-14",
-      "to": "2026-07-07",
+      "to": "2026-10-07",
       "years": [
         2024,
         2025,
         2026
       ],
-      "files": 53,
+      "files": 60,
       "members": [
         "2024-10-14.json",
         "2024-10-15.json",
@@ -1908,10 +1908,17 @@
         "2026-05-05.json",
         "2026-05-06.json",
         "2026-05-07.json",
-        "2026-07-07.json"
+        "2026-07-07.json",
+        "2026-08-04.json",
+        "2026-08-05.json",
+        "2026-09-08.json",
+        "2026-09-09.json",
+        "2026-09-10.json",
+        "2026-10-06.json",
+        "2026-10-07.json"
       ],
-      "uncompressed_bytes": 41960960,
-      "compressed_bytes": 15854138
+      "uncompressed_bytes": 49279176,
+      "compressed_bytes": 18741216
     }
   ]
 }

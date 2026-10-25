@@ -1,0 +1,13 @@
+{
+  "bytes": 1019931,
+  "captured_at": "2026-10-25T08:17:35Z",
+  "format": "modern",
+  "http_status": 200,
+  "raw_sha256": "2cb6504d564f4594c8592a6bfdb5d241a94e534b4200b83179084e2ee754a5b4",
+  "request_json": {
+    "sittingDate": "07-10-2026"
+  },
+  "request_method": "POST",
+  "sitting_date": "2026-10-07",
+  "source_url": "https://sprs.parl.gov.sg/search/getHansardReport/"
+}

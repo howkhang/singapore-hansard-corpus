@@ -2,10 +2,10 @@
 
 Index of **Second Reading** debates in the Hansard corpus. Second Reading is when the Minister explains why a Bill is needed — use the long title (purpose in one sentence) and the opening of the speech to see the reason for a new Act or amendment.
 
-Generated from `./data/hansard/json` covering 1955-05-25 to 2026-05-07.
+Generated from `./data/hansard/json` covering 1955-05-25 to 2026-10-07.
 
-- Second readings indexed: **2544**
-- Bills introduced, Second Reading not yet in corpus: **299**
+- Second readings indexed: **2553**
+- Bills introduced, Second Reading not yet in corpus: **302**
 
 ## How to use
 
@@ -16,7 +16,7 @@ Generated from `./data/hansard/json` covering 1955-05-25 to 2026-05-07.
 
 ## By year
 
-- [2026](#2026) (18)
+- [2026](#2026) (27)
 - [2025](#2025) (26)
 - [2024](#2024) (46)
 - [2023](#2023) (40)
@@ -255,6 +255,90 @@ Generated from `./data/hansard/json` covering 1955-05-25 to 2026-05-07.
 - **First Reading:** 2026-04-07 (`./data/hansard/json/2026-04-07.json`) — presented by the Senior Parliamentary Secretary to the Minister for National Development (Dr Syed Harun Alhabsyi) on behalf of the Minister for National Development
 - **Second Reading:** 2026-05-07 (`./data/hansard/json/2026-05-07.json`) — moved by The Senior Parliamentary Secretary to the Minister for National Development (Dr Syed Harun Alhabsyi) (for the Minister for National Development)
 - **Opening:** The Statutes (Miscellaneous Amendments) Bill contains 21 clauses and makes miscellaneous amendments to several Acts. These amendments are largely technical and operational in nature. The amendments fall within the following five groups. The first set of amendments found in Part 1 of the Bill clarifies and expands the functions and duties of the Building and Construction Authority (BCA) and the Urban Redevelopment Authority (URA). Clause 2 amends the Building and Construction Authority Act 1999 (BCA Act) to confer the following functions on BCA. BCA will act as the Government's agent in managing programmes such as the Estate Upgrading Programme (EUP) for private residential estates and the Enhancement for Active Seniors (Private Housing) programme. BCA will also take on the function of maintaining foreshore structures belonging to the Government and erected on any part of the foreshore…
+
+### Road Traffic (Miscellaneous Amendments) Bill
+
+- **Kind:** Miscellaneous amendment
+- **Parliament:** 15
+- **Purpose (long title):** to amend the Road Traffic Act 1961 and the Motor Vehicles (Third-Party Risks and Compensation) Act 1960
+- **First Reading:** 2026-07-07 (`./data/hansard/json/2026-07-07.json`) — presented by the Senior Minister of State for Home Affairs (Ms Sim Ann) on behalf of the Coordinating Minister for National Security and Minister for Home Affairs
+- **Second Reading:** 2026-08-04 (`./data/hansard/json/2026-08-04.json`)
+- **Continued:** 2026-08-04 (resumed, `./data/hansard/json/2026-08-04.json`), 2026-08-04 (resumed, `./data/hansard/json/2026-08-04.json`)
+- **Opening:** Road accidents, which can lead to severe and irreversible consequences for victims and their families are entirely preventable. Our accident rates and fatality numbers need to come down. Last year we had a record high of 149 fatalities – almost one death every two days on the roads. There are several pillars in our approach towards promoting road safety. One pillar is having strong and effective laws. Over the years, the Ministry has reviewed and updated the Road Traffic Act (RTA) to ensure that it remains fit-for-purpose. Since 2019, the Act has been amended four times. We seek to do so again today, to achieve three key objectives: First, strengthen accountability for the most egregious road conduct; Second, further deter driving under the influence of alcohol or drugs; and third, enhance the Traffic Police's ability to detect and enforce against traffic offences. Sir, the most…
+
+### Civil Defence Shelter and Fire Safety (Miscellaneous Amendment) Bill
+
+- **Kind:** Miscellaneous amendment
+- **Parliament:** 15
+- **Second Reading:** 2026-09-08 (`./data/hansard/json/2026-09-08.json`)
+- **Opening:** As part of our efforts to ensure the Singapore Civil Defence Force's (SCDF's) regulatory regimes remain relevant and up to date, we have reviewed the Civil Defence Shelter Act and the Fire Safety Act to tighten SCDF's regulatory oversight over regulated shelter products and to reduce the regulatory burden on businesses involved in petroleum and flammable material (P&FM) activities. This Bill covers the following themes. One, to strengthen SCDF's oversight over regulated shelter products and empower SCDF to take appropriate actions against parties in the supply chain for non-compliance; two, to introduce a class licensing regime for the regulation of P&FM activities; three, to allow SCDF to appoint SEOs to conduct compliance checks for the transport of P&FM; and four, to clarify the responsibilities of premise owners and occupiers in relation to fire safety measures. We also have other…
+
+### Land Titles (Strata) (Amendment) Bill
+
+- **Kind:** Amendment
+- **Parliament:** 15
+- **Purpose (long title):** to amend the Land Titles (Strata) Act 1967 and to make consequential amendments to certain other Acts
+- **First Reading:** 2026-08-04 (`./data/hansard/json/2026-08-04.json`) — presented by the Senior Minister of State for Law (Mr Murali Pillai) on behalf of the Minister for Law
+- **Second Reading:** 2026-09-08 (`./data/hansard/json/2026-09-08.json`) — moved by The Minister for Law (Mr Edwin Tong Chun Fai)
+- **Continued:** 2026-09-08 (resumed, `./data/hansard/json/2026-09-08.json`)
+- **Opening:** Within our small island, we must accommodate housing, industry, commerce, transport, defence, green spaces, water catchment and more – all of the infrastructure necessary for a modern city-state. Singapore's land constraints shape our approach towards the use of land and property in a very fundamental way. Land in Singapore is a scarce and finite national resource. It is therefore critical that we facilitate the renewal and rejuvenation of our urban environment so that our tight land resources can accommodate the evolving needs of Singaporeans. Buildings, like all physical things, they age. And as they age, the maintenance and upkeep becomes increasingly pressing: in the early years of a development, maintenance is more manageable and costs, perhaps, more predictable. But over time, major components reach the end of their service lives; repair bills grow larger and more frequent; and…
+
+### Scams (Countermeasures) and Other Matters Bill
+
+- **Kind:** New Act
+- **Parliament:** 15
+- **Purpose (long title):** to amend the Protection from Scams Act 2025 and the Miscellaneous Offences (Public Order and Nuisance) Act 1906 to counter and prevent scams, to amend the Online Criminal Harms Act 2023 and the Police Force Act 2004 to enhance enforcement measures and to make related and consequential amendments to the Banking Act 1970
+- **First Reading:** 2026-08-04 (`./data/hansard/json/2026-08-04.json`) — presented by the Senior Minister of State for Home Affairs (Mr Goh Pei Ming) on behalf of the Senior Minister, Coordinating Minister for National Security and Minister for Home Affairs
+- **Second Reading:** 2026-09-08 (`./data/hansard/json/2026-09-08.json`) — moved by The Senior Minister of State for Home Affairs (Mr Goh Pei Ming) (for the Senior Minister, Coordinating Minister for National Security and Minister for Home Affairs)
+- **Continued:** 2026-09-09 (resumed, `./data/hansard/json/2026-09-09.json`), 2026-09-09 (resumed, `./data/hansard/json/2026-09-09.json`)
+- **Opening:** Sir, Singapore's scams situation has improved since 2025. After consecutive years of increases, both scam cases and losses fell in 2025. This improvement continued into the first half of 2026, where reported scam cases fell by 14.4% to about 16,800 cases, while losses fell by 17.9% to about $411 million, compared to the same period last year. This progress is a result of our strong public-private collaboration, robust enforcement and legal framework, and the adoption of technology. I would like to thank Members of this House for your strong support in our anti-scam efforts, and your personal contributions to spreading anti-scam public education to your constituents. Our fight, however, is far from over. We still receive on average about 90 reported scam cases, involving about $2 million lost, every day. Globally, the scam situation continues to worsen, as syndicates evade international…
+
+### Health Sciences Authority (Amendment) and Other Matters Bill
+
+- **Kind:** Amendment
+- **Parliament:** 15
+- **Purpose (long title):** to amend the Health Sciences Authority Act 2001, the Biological Agents and Toxins Act 2005, the Human Biomedical Research Act 2015 and the Healthcare Services Act 2020, and to make related and miscellaneous amendments to certain other Acts
+- **First Reading:** 2026-08-04 (`./data/hansard/json/2026-08-04.json`) — presented by the Minister of State for Health (Ms Rahayu Mahzam) on behalf of the Coordinating Minister for Social Policies and Minister for Health
+- **Second Reading:** 2026-09-09 (`./data/hansard/json/2026-09-09.json`) — moved by The Minister of State for Health (Ms Rahayu Mahzam) (for the Coordinating Minister for Social Policies and Minister for Health)
+- **Opening:** Singapore's strong healthcare reputation rests in part on a regulatory system that safeguards patients and public health while enabling Singaporeans to benefit from safe and effective healthcare innovations. But healthcare is evolving rapidly with increasing integration across new models of care, digital health, genomics and artificial intelligence (AI). These may not fit neatly within traditional regulatory boundaries and hence, our regulatory ecosystem must also evolve and respond in an equally integrated manner. This is the purpose of today's Bill. Today, our regulatory ecosystem is organised across three agencies. First, the Ministry of Health (MOH) regulates healthcare services, health information, human biomedical research and biosafety. Second, the Health Sciences Authority (HSA) regulates health products such as medicines and medical devices. Third, the Secretariat of Healthcare…
+
+### Digital Infrastructure Bill
+
+- **Kind:** New Act
+- **Parliament:** 15
+- **Purpose (long title):** to provide for the licensing of providers of major foundational digital infrastructure services and operators of data centres in Singapore, and for matters relating thereto, and to make related amendments to the Cybersecurity Act 2018
+- **First Reading:** 2026-09-08 (`./data/hansard/json/2026-09-08.json`) — presented by the Senior Minister of State for Digital Development and Information (Mr Tan Kiat How) (on behalf of the Minister of Digital Development and Information)
+- **Second Reading:** 2026-10-06 (`./data/hansard/json/2026-10-06.json`) — moved by The Senior Minister of State for Digital Development and Information (Mr Tan Kiat How) (for the Minister for Digital Development and Information)
+- **Continued:** 2026-10-06 (resumed, `./data/hansard/json/2026-10-06.json`), 2026-10-07 (resumed, `./data/hansard/json/2026-10-07.json`), 2026-10-07 (resumed, `./data/hansard/json/2026-10-07.json`)
+- **Opening:** Sir, we are introducing the Digital Infrastructure Bill to put in place the foundations for the next phase of our digital economy and society, by ensuring that our digital infrastructure services are resilient, secure and environmentally sustainable, so that businesses and Singaporeans can continue to rely on it. I will first explain why the Bill is needed, so that Members can better understand how the Bill supports Singapore's long-term competitiveness and growth. I will then explain the Bill's key features. Primarily, the Bill establishes two licensing regimes: first, for the security and resilience of foundational digital infrastructure services, namely major data centres and cloud services; and second, for the environmental sustainability of data centres. Finally, I will cover the key administrative and enforcement provisions that support these regimes, as well as related amendments…
+
+### Finance (Income Taxes) Bill
+
+- **Kind:** New Act
+- **Parliament:** 15
+- **Purpose (long title):** to amend the Income Tax Act 1947, the Multinational Enterprise (Minimum Tax) Act 2024, and the Economic Expansion Incentives (Relief from Income Tax) Act 1967, and to make related amendments to the Goods and Services Tax Act 1993 and the Property Tax Act 1960
+- **First Reading:** 2026-09-08 (`./data/hansard/json/2026-09-08.json`) — presented by the Second Minister for Finance (Mr Jeffrey Siow)
+- **Second Reading:** 2026-10-06 (`./data/hansard/json/2026-10-06.json`) — moved by The Second Minister for Finance (Mr Jeffrey Siow)
+- **Opening:** This past year has been challenging for many businesses. The conflict in the Strait of Hormuz has disrupted supply chains and pushed up energy costs. At the same time, artificial intelligence (AI) is transforming industries, and companies must adapt quickly to stay competitive. This Bill does three things. First, it brings into legal effect tax measures, that were announced at this year's Budget and during the April Parliament Sitting to help businesses cope with these cost pressures and invest in AI. Second, it introduces amendments to comply with the latest Pillar Two global minimum tax rules, which will provide greater certainty to multinational enterprises. Third, it introduces changes to simplify tax filing for taxpayers. Let me first start with the first set of amendments on business support. Clause 31 introduces the Corporate Income Tax Rebates and Cash Grants for the Year of…
+
+### Financial Services and Markets (Amendment) Bill
+
+- **Kind:** Amendment
+- **Parliament:** 15
+- **Purpose (long title):** to amend the Financial Services and Markets Act 2022, and to make related amendments to the Banking Act 1970, the Financial Advisers Act 2001, the Financial Holding Companies Act 2013, the Insurance Act 1966, the Securities and Futures Act 2001, the Trust Companies Act 2005 and the Variable Capital Companies Act 2018
+- **First Reading:** 2026-09-08 (`./data/hansard/json/2026-09-08.json`) — presented by the Minister of State for Foreign Affairs and National Development (Mr Alvin Tan) (on behalf of the Deputy Prime Minister and Minister for Trade and Industry (Trade))
+- **Second Reading:** 2026-10-06 (`./data/hansard/json/2026-10-06.json`)
+- **Opening:** the Deputy Prime Minister and Minister for Energy, Trade and Industry (Trade), in his capacity as the Minister-in-charge of the Monetary Authority of Singapore (MAS), I move, "That the Financial Services and Markets (Amendment) Bill 2026 be now read a Second time." Sir, MAS' regulatory regime aims to preserve the resilience and soundness of Singapore's financial system. This includes ensuring that distressed financial institutions can be resolved in a manner that preserves financial stability and maintains confidence in our financial system. MAS is currently able to exercise resolution powers under the Financial Services and Markets Act 2022 to secure such outcomes, including bailing in subordinated creditors of a distressed FI to restore its solvency. To complement these powers, the Bill will allow MAS to impose Total Loss-absorbing Capacity (TLAC) requirements. Under this TLAC…
+
+### Land Transport and Related Matters (No 2) Bill
+
+- **Kind:** New Act
+- **Parliament:** 15
+- **Purpose (long title):** to amend the Active Mobility Act 2017, the Electric Vehicles Charging Act 2022, the Road Traffic Act 1961 and the Small Motorised Vehicles (Safety) Act 2020, and to make consequential and related amendments to certain other Acts
+- **First Reading:** 2026-09-08 (`./data/hansard/json/2026-09-08.json`) — presented by the Minister of State for Transport (Mr Baey Yam Keng) (on behalf of the Minister for Transport)
+- **Second Reading:** 2026-10-07 (`./data/hansard/json/2026-10-07.json`) — moved by The Minister of State for Transport (Mr Baey Yam Keng) (for the Minister for Transport)
+- **Continued:** 2026-10-07 (resumed, `./data/hansard/json/2026-10-07.json`)
+- **Opening:** The proposed amendments aim to keep our land transport regulations relevant and effective. The Bill cuts across multiple land transport areas and reflects two complementary principles that have consistently guided our approach: one, strengthening public safety where risks have grown or evolved; and two, streamlining rules where we can responsibly reduce regulatory burden on individuals and businesses. I will now go through the five key areas of amendments. First, we will strengthen our efforts to stem unlawful use of deregistered vehicles. Deregistered vehicles pose a risk to road safety as they are no longer covered by insurance or subject to the Land Transport Authority's (LTA's) periodic inspections. It is thus illegal to keep or use deregistered vehicles on our roads. More than 99% of deregistered vehicles are properly disposed of. However, a small number of vehicles, about 1,900…
 
 ## 2025
 
@@ -23382,8 +23466,26 @@ Generated from `./data/hansard/json` covering 1955-05-25 to 2026-05-07.
 - **Purpose (long title):** to introduce a Bill intituled "An Act to amend the Criminal Law (Temporary Provisions) Act 1955
 - **First Reading:** 2024-03-07 (`./data/hansard/json/2024-03-07.json`)
 
-### Road Traffic (Miscellaneous Amendments) Bill
+### Civil Defence Shelter and Fire Safety (Miscellaneous Amendments) Bill
 
 - **Kind:** Miscellaneous amendment
-- **Purpose (long title):** to amend the Road Traffic Act 1961 and the Motor Vehicles (Third-Party Risks and Compensation) Act 1960
-- **First Reading:** 2026-07-07 (`./data/hansard/json/2026-07-07.json`) — presented by the Senior Minister of State for Home Affairs (Ms Sim Ann) on behalf of the Coordinating Minister for National Security and Minister for Home Affairs
+- **Purpose (long title):** to amend the Civil Defence Shelter Act 1997 and the Fire Safety Act 1993, and to repeal the Chemical Weapons (Prohibition) (Amendment) Act 2019
+- **First Reading:** 2026-08-04 (`./data/hansard/json/2026-08-04.json`) — presented by the Senior Minister of State for Home Affairs (Mr Goh Pei Ming) on behalf of the Senior Minister, Coordinating Minister for National Security and Minister for Home Affairs
+
+### Administration of Muslim Law (Amendment) Bill
+
+- **Kind:** Amendment
+- **Purpose (long title):** to amend the Administration of Muslim Law Act 1966 and to make consequential and related amendments to certain other Acts
+- **First Reading:** 2026-10-06 (`./data/hansard/json/2026-10-06.json`) — presented by the Acting Minister-in-charge of Muslim Affairs (Mr Zaqy Mohamad)
+
+### Maritime and Port Authority of Singapore (Amendment) Bill
+
+- **Kind:** Amendment
+- **Purpose (long title):** to amend the Maritime and Port Authority of Singapore Act 1996 and to make consequential and related amendments to certain other Acts
+- **First Reading:** 2026-10-06 (`./data/hansard/json/2026-10-06.json`) — presented by the Senior Minister of State for Transport (Mr Murali Pillai) (on behalf of the Minister for Transport)
+
+### Statutes (Miscellaneous Amendments) (No 2) Bill
+
+- **Kind:** Miscellaneous amendment
+- **Purpose (long title):** to make miscellaneous amendments to certain Acts in connection with the renaming of the Ministry of Trade and Industry
+- **First Reading:** 2026-10-06 (`./data/hansard/json/2026-10-06.json`) — presented by the Minister for Energy, Trade and Industry (Energy and Industry) (Dr Tan See Leng)
